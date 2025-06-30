@@ -1,0 +1,647 @@
+        "1864220976": {
+            "name": "class SpellTemplate",
+            "bases": [
+                "CoreTemplate",
+                "PropertyClass"
+            ],
+            "hash": 1864220976,
+            "properties": {
+                "m_behaviors": {
+                    "type": "class BehaviorTemplate*",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 7,
+                    "container": "Vector",
+                    "dynamic": true,
+                    "singleton": false,
+                    "pointer": true,
+                    "hash": 1197808594
+                },
+                "If": {
+                    "type": "std::string",
+                    "id": 1,
+                    "offset": 96,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1717359772
+                },
+                "m_description": {
+                    "type": "std::string",
+                    "id": 2,
+                    "offset": 168,
+                    "flags": 8388615,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1649374815
+                },
+                "m_advancedDescription": {
+                    "type": "std::string",
+                    "id": 3,
+                    "offset": 200,
+                    "flags": 8388615,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3465713013
+                },
+                "m_displayName": {
+                    "type": "std::string",
+                    "id": 4,
+                    "offset": 136,
+                    "flags": 8388615,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2446900370
+                },
+                "m_spellBase": {
+                    "type": "std::string",
+                    "id": 5,
+                    "offset": 248,
+                    "flags": 268435463,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2688054198,
+                    "enum_options": {
+                        "__BASECLASS": "CinematicTemplate"
+                    }
+                },
+                "m_effects": {
+                    "type": "class SharedPointer<class SpellEffect>",
+                    "id": 6,
+                    "offset": 280,
+                    "flags": 7,
+                    "container": "Vector",
+                    "dynamic": true,
+                    "singleton": false,
+                    "pointer": true,
+                    "hash": 370726379
+                },
+                "m_sMagicSchoolName": {
+                    "type": "std::string",
+                    "id": 7,
+                    "offset": 312,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2035693400
+                },
+                "m_sTypeName": {
+                    "type": "std::string",
+                    "id": 8,
+                    "offset": 352,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3580785905
+                },
+                "m_trainingCost": {
+                    "type": "int",
+                    "id": 9,
+                    "offset": 384,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 982588239
+                },
+                "m_accuracy": {
+                    "type": "int",
+                    "id": 10,
+                    "offset": 388,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1636315493
+                },
+                "m_baseCost": {
+                    "type": "int",
+                    "id": 11,
+                    "offset": 232,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1475151502
+                },
+                "m_creditsCost": {
+                    "type": "int",
+                    "id": 12,
+                    "offset": 236,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 715313825
+                },
+                "m_pvpCurrencyCost": {
+                    "type": "int",
+                    "id": 13,
+                    "offset": 240,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 645595444
+                },
+                "m_pvpTourneyCurrencyCost": {
+                    "type": "int",
+                    "id": 14,
+                    "offset": 244,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 517874954
+                },
+                "m_boosterPackIcon": {
+                    "type": "std::string",
+                    "id": 15,
+                    "offset": 496,
+                    "flags": 131079,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3428653697
+                },
+                "m_validTargetSpells": {
+                    "type": "unsigned int",
+                    "id": 16,
+                    "offset": 392,
+                    "flags": 7,
+                    "container": "List",
+                    "dynamic": true,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2355782967
+                },
+                "m_PvP": {
+                    "type": "bool",
+                    "id": 17,
+                    "offset": 408,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 269492361
+                },
+                "m_PvE": {
+                    "type": "bool",
+                    "id": 18,
+                    "offset": 409,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 269492350
+                },
+                "m_noPvPEnchant": {
+                    "type": "bool",
+                    "id": 19,
+                    "offset": 410,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 661581703
+                },
+                "m_noPvEEnchant": {
+                    "type": "bool",
+                    "id": 20,
+                    "offset": 411,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 10144220
+                },
+                "m_battlegroundsOnly": {
+                    "type": "bool",
+                    "id": 21,
+                    "offset": 412,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1244782419
+                },
+                "m_Treasure": {
+                    "type": "bool",
+                    "id": 22,
+                    "offset": 413,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1749096414
+                },
+                "m_noDiscard": {
+                    "type": "bool",
+                    "id": 23,
+                    "offset": 414,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 565749226
+                },
+                "m_leavesPlayWhenCast": {
+                    "type": "bool",
+                    "id": 24,
+                    "offset": 532,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 698216294
+                },
+                "m_imageIndex": {
+                    "type": "int",
+                    "id": 25,
+                    "offset": 416,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1570500405
+                },
+                "m_imageName": {
+                    "type": "std::string",
+                    "id": 26,
+                    "offset": 424,
+                    "flags": 131079,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2391520543
+                },
+                "m_cloaked": {
+                    "type": "bool",
+                    "id": 27,
+                    "offset": 489,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 7349510
+                },
+                "m_casterInvisible": {
+                    "type": "bool",
+                    "id": 28,
+                    "offset": 490,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 310214650
+                },
+                "m_adjectives": {
+                    "type": "std::string",
+                    "id": 29,
+                    "offset": 576,
+                    "flags": 7,
+                    "container": "List",
+                    "dynamic": true,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2967855037
+                },
+                "m_spellSourceType": {
+                    "type": "enum SpellTemplate::kSpellSourceType",
+                    "id": 30,
+                    "offset": 528,
+                    "flags": 2097159,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 156272727,
+                    "enum_options": {
+                        "kCaster": 0,
+                        "kPet": 1,
+                        "kShadowCreature": 2,
+                        "kWeapon": 3,
+                        "kEquipment": 4
+                    }
+                },
+                "m_cloakedName": {
+                    "type": "std::string",
+                    "id": 31,
+                    "offset": 536,
+                    "flags": 268435463,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2846679215,
+                    "enum_options": {
+                        "__BASECLASS": "SpellTemplate"
+                    }
+                },
+                "m_purchaseRequirements": {
+                    "type": "class RequirementList*",
+                    "id": 32,
+                    "offset": 608,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": true,
+                    "hash": 3174641793
+                },
+                "m_displayRequirements": {
+                    "type": "class RequirementList*",
+                    "id": 33,
+                    "offset": 840,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": true,
+                    "hash": 3646782876
+                },
+                "m_descriptionTrainer": {
+                    "type": "std::string",
+                    "id": 34,
+                    "offset": 616,
+                    "flags": 8388871,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1756093908
+                },
+                "m_descriptionCombatHUD": {
+                    "type": "std::string",
+                    "id": 35,
+                    "offset": 648,
+                    "flags": 8388871,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1631478006
+                },
+                "m_displayIndex": {
+                    "type": "int",
+                    "id": 36,
+                    "offset": 680,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1250551048
+                },
+                "m_hiddenFromEffectsWindow": {
+                    "type": "bool",
+                    "id": 37,
+                    "offset": 684,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1832736331
+                },
+                "m_ignoreCharms": {
+                    "type": "bool",
+                    "id": 38,
+                    "offset": 685,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1840075893
+                },
+                "m_alwaysFizzle": {
+                    "type": "bool",
+                    "id": 39,
+                    "offset": 686,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2030988856
+                },
+                "m_spellCategory": {
+                    "type": "std::string",
+                    "id": 40,
+                    "offset": 688,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2472376729
+                },
+                "m_showPolymorphedName": {
+                    "type": "bool",
+                    "id": 41,
+                    "offset": 720,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2097929096
+                },
+                "m_skipTruncation": {
+                    "type": "bool",
+                    "id": 42,
+                    "offset": 721,
+                    "flags": 263,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1838335249
+                },
+                "m_maxCopies": {
+                    "type": "unsigned int",
+                    "id": 43,
+                    "offset": 724,
+                    "flags": 263,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 403022326
+                },
+                "m_levelRestriction": {
+                    "type": "int",
+                    "id": 44,
+                    "offset": 728,
+                    "flags": 263,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 176502472
+                },
+                "m_delayEnchantment": {
+                    "type": "bool",
+                    "id": 45,
+                    "offset": 732,
+                    "flags": 287,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 191336919
+                },
+                "m_delayEnchantmentOrder": {
+                    "type": "enum SpellEffect::kDelayOrder",
+                    "id": 46,
+                    "offset": 736,
+                    "flags": 287,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2526055263,
+                    "enum_options": {
+                        "SpellEffect::kAnyOrder": 0,
+                        "SpellEffect::kFirst": 1,
+                        "SpellEffect::kSecond": 2
+                    }
+                },
+                "m_previousSpellName": {
+                    "type": "std::string",
+                    "id": 47,
+                    "offset": 744,
+                    "flags": 268435463,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2903322585,
+                    "enum_options": {
+                        "__BASECLASS": "SpellTemplate"
+                    }
+                },
+                "m_cardFront": {
+                    "type": "std::string",
+                    "id": 48,
+                    "offset": 456,
+                    "flags": 131359,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3557598526
+                },
+                "m_useGloss": {
+                    "type": "bool",
+                    "id": 49,
+                    "offset": 488,
+                    "flags": 287,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 668817544
+                },
+                "m_ignoreDispel": {
+                    "type": "bool",
+                    "id": 50,
+                    "offset": 776,
+                    "flags": 287,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1881041624
+                },
+                "m_backRowFriendly": {
+                    "type": "bool",
+                    "id": 51,
+                    "offset": 777,
+                    "flags": 287,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 501584377
+                },
+                "m_spellRank": {
+                    "type": "class SharedPointer<class SpellRank>",
+                    "id": 52,
+                    "offset": 784,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": true,
+                    "hash": 3152361374
+                },
+                "m_secondarySchoolName": {
+                    "type": "std::string",
+                    "id": 53,
+                    "offset": 800,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1803268236
+                },
+                "m_spellFusion": {
+                    "type": "unsigned int",
+                    "id": 54,
+                    "offset": 836,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1658928321
+                },
+                "m_requiredSchoolName": {
+                    "type": "std::string",
+                    "id": 55,
+                    "offset": 848,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3576058981
+                }
+            }
+        },

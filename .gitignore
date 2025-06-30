@@ -31,4 +31,5 @@ _ReSharper*/
 .idea/
 #Nuget packages folder
 packages/
-/__pycache__/wizard101_spell_dtos.cpython-313.pyc
+__pycache__
+failed_spells

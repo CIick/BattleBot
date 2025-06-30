@@ -1,0 +1,31 @@
+        "1601626199": {
+            "name": "class ConditionalSpellElement",
+            "bases": [
+                "PropertyClass"
+            ],
+            "hash": 1601626199,
+            "properties": {
+                "m_pReqs": {
+                    "type": "class SharedPointer<class RequirementList>",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 31,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": true,
+                    "hash": 2565964996
+                },
+                "m_pEffect": {
+                    "type": "class SharedPointer<class SpellEffect>",
+                    "id": 1,
+                    "offset": 88,
+                    "flags": 31,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": true,
+                    "hash": 400541736
+                }
+            }
+        },

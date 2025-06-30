@@ -1,0 +1,59 @@
+  --Core Tables (3)
+
+  SELECT * FROM spell_cards;
+  SELECT * FROM spell_effects;
+  SELECT * FROM spell_ranks;
+
+  --Effect Tables (10)
+
+  SELECT * FROM delay_spell_effects;
+  SELECT * FROM delay_spell_target_subcircles;
+  SELECT * FROM conditional_spell_effects;
+  SELECT * FROM conditional_spell_elements;
+  SELECT * FROM variable_spell_effects;
+  SELECT * FROM effect_list_spell_effects;
+  SELECT * FROM random_spell_effects;
+  SELECT * FROM random_per_target_spell_effects;
+  SELECT * FROM hanging_conversion_spell_effects;
+  SELECT * FROM target_count_spell_effects;
+  SELECT * FROM shadow_spell_effects;
+  SELECT * FROM count_based_spell_effects;
+
+  --Requirement Tables (15)
+
+  SELECT * FROM requirement_lists;
+  SELECT * FROM req_is_school;
+  SELECT * FROM req_hanging_charm;
+  SELECT * FROM req_hanging_ward;
+  SELECT * FROM req_hanging_over_time;
+  SELECT * FROM req_hanging_effect_type;
+  SELECT * FROM req_hanging_aura;
+  SELECT * FROM req_school_of_focus;
+  SELECT * FROM req_minion;
+  SELECT * FROM req_has_entry;
+  SELECT * FROM req_combat_health;
+  SELECT * FROM req_pvp_combat;
+  SELECT * FROM req_shadow_pip_count;
+  SELECT * FROM req_combat_status;
+  SELECT * FROM req_pip_count;
+
+  --Spell Data Relationship Tables (3)
+
+  SELECT * FROM spell_adjectives;
+  SELECT * FROM spell_behaviors;
+  SELECT * FROM spell_valid_targets;
+
+  --Type-Specific Template Tables (7)
+
+  SELECT * FROM tiered_spell_data;
+  SELECT * FROM tiered_spell_next_tiers;
+  SELECT * FROM cantrips_spell_data;
+  SELECT * FROM castle_magic_spell_data;
+  SELECT * FROM fishing_spell_data;
+  SELECT * FROM garden_spell_data;
+  SELECT * FROM whirlyburly_spell_data;
+
+  --Metadata & Logging Tables (2)
+
+  SELECT * FROM processing_metadata;
+  SELECT * FROM duplicate_log;

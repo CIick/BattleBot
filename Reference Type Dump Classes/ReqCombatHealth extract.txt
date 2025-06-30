@@ -1,0 +1,79 @@
+
+        "1161498678": {
+            "name": "class ReqCombatHealth",
+            "bases": [
+                "ConditionalSpellEffectRequirement",
+                "Requirement",
+                "PropertyClass"
+            ],
+            "hash": 1161498678,
+            "properties": {
+                "m_applyNOT": {
+                    "type": "bool",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 31,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1746328074,
+                    "enum_options": {
+                        "__DEFAULT": 0
+                    }
+                },
+                "m_operator": {
+                    "type": "enum Requirement::Operator",
+                    "id": 1,
+                    "offset": 76,
+                    "flags": 2097183,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2672792317,
+                    "enum_options": {
+                        "ROP_AND": 0,
+                        "ROP_OR": 1,
+                        "__DEFAULT": "ROP_AND"
+                    }
+                },
+                "m_targetType": {
+                    "type": "enum ConditionalSpellEffectRequirement::RequirementTarget",
+                    "id": 2,
+                    "offset": 80,
+                    "flags": 2097159,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2547737902,
+                    "enum_options": {
+                        "RT_Caster": 0,
+                        "RT_Target": 1
+                    }
+                },
+                "m_fMinPercent": {
+                    "type": "float",
+                    "id": 3,
+                    "offset": 88,
+                    "flags": 31,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 262693330
+                },
+                "m_fMaxPercent": {
+                    "type": "float",
+                    "id": 4,
+                    "offset": 92,
+                    "flags": 31,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 643246740
+                }
+            }
+        },

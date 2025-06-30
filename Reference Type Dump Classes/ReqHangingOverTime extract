@@ -1,0 +1,95 @@
+
+        "808508263": {
+            "name": "class ReqHangingOverTime",
+            "bases": [
+                "ConditionalSpellEffectRequirement",
+                "Requirement",
+                "PropertyClass"
+            ],
+            "hash": 808508263,
+            "properties": {
+                "m_applyNOT": {
+                    "type": "bool",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 31,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1746328074,
+                    "enum_options": {
+                        "__DEFAULT": 0
+                    }
+                },
+                "m_operator": {
+                    "type": "enum Requirement::Operator",
+                    "id": 1,
+                    "offset": 76,
+                    "flags": 2097183,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2672792317,
+                    "enum_options": {
+                        "ROP_AND": 0,
+                        "ROP_OR": 1,
+                        "__DEFAULT": "ROP_AND"
+                    }
+                },
+                "m_targetType": {
+                    "type": "enum ConditionalSpellEffectRequirement::RequirementTarget",
+                    "id": 2,
+                    "offset": 80,
+                    "flags": 2097159,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2547737902,
+                    "enum_options": {
+                        "RT_Caster": 0,
+                        "RT_Target": 1
+                    }
+                },
+                "m_disposition": {
+                    "type": "enum SpellEffect::kHangingDisposition",
+                    "id": 3,
+                    "offset": 88,
+                    "flags": 2097159,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1904841031,
+                    "enum_options": {
+                        "SpellEffect::kBoth": 0,
+                        "SpellEffect::kBeneficial": 1,
+                        "SpellEffect::kHarmful": 2
+                    }
+                },
+                "m_minCount": {
+                    "type": "int",
+                    "id": 4,
+                    "offset": 92,
+                    "flags": 31,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1486503815
+                },
+                "m_maxCount": {
+                    "type": "int",
+                    "id": 5,
+                    "offset": 96,
+                    "flags": 31,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 136048585
+                }
+            }
+        },
