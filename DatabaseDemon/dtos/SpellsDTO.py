@@ -100,6 +100,12 @@ class ReqHangingEffectTypeDTO:
     m_effectType: Optional[int] = 0
     m_minCount: Optional[int] = 0
     m_maxCount: Optional[int] = 0
+    m_param_low: Optional[int] = 0
+    m_param_high: Optional[int] = 0
+    m_min_count: Optional[int] = 0
+    m_max_count: Optional[int] = 0
+    m_anyType: Optional[bool] = False
+    m_globalEffect: Optional[bool] = False
 
 
 @dataclass
@@ -111,6 +117,9 @@ class ReqHangingAuraDTO:
     m_disposition: Optional[int] = 0
     m_minCount: Optional[int] = 0
     m_maxCount: Optional[int] = 0
+    m_effectType: Optional[int] = 0
+    m_anyType: Optional[bool] = False
+    m_globalEffect: Optional[bool] = False
 
 
 @dataclass
@@ -119,7 +128,7 @@ class ReqSchoolOfFocusDTO:
     m_applyNOT: Optional[bool] = False
     m_operator: Optional[int] = 0
     m_targetType: Optional[int] = 0
-    m_magicSchoolName: Optional[str] = ""
+    m_magicSchool: Optional[str] = ""
 
 
 @dataclass
@@ -130,6 +139,7 @@ class ReqMinionDTO:
     m_targetType: Optional[int] = 0
     m_minCount: Optional[int] = 0
     m_maxCount: Optional[int] = 0
+    m_minionType: Optional[str] = ""
 
 
 @dataclass
@@ -139,6 +149,9 @@ class ReqHasEntryDTO:
     m_operator: Optional[int] = 0
     m_targetType: Optional[int] = 0
     m_entryName: Optional[str] = ""
+    m_displayName: Optional[str] = ""
+    m_isQuestRegistry: Optional[bool] = False
+    m_questName: Optional[str] = ""
 
 
 @dataclass
@@ -176,6 +189,7 @@ class ReqCombatStatusDTO:
     m_operator: Optional[int] = 0
     m_targetType: Optional[int] = 0
     m_combatStatus: Optional[int] = 0
+    m_status: Optional[int] = 0
 
 
 @dataclass
@@ -212,6 +226,7 @@ class SpellEffectDTO:
     m_rank: Optional[int] = 0
     m_sDamageType: Optional[str] = ""
     m_spellTemplateID: Optional[int] = 0
+    m_initialBacklash: Optional[bool] = False
 
 
 @dataclass
@@ -511,3 +526,4 @@ class CountBasedSpellEffectDTO(SpellEffectDTO):
     """DTO for CountBasedSpellEffect - inherits from SpellEffectDTO"""
     m_effectList: List['SpellEffectDTO'] = field(default_factory=list)
     m_countThreshold: Optional[int] = 0  # Count-based threshold field
+    m_mode: Optional[int] = 0

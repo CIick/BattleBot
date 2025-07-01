@@ -211,16 +211,18 @@ class DatabaseSchema:
             )
         """,
         
-        # RequirementList table (nested in ConditionalSpellElement.m_pReqs)
+        # RequirementList table (can be nested in ConditionalSpellElement.m_pReqs or directly on spells)
         "requirement_lists": """
             CREATE TABLE requirement_lists (
                 filename TEXT,
-                parent_effect_order INTEGER,            -- Which ConditionalSpellEffect this belongs to
-                element_order INTEGER,                  -- Which ConditionalSpellElement this belongs to
+                parent_type TEXT,                       -- 'conditional_element', 'spell_template', 'display_requirements'
+                parent_effect_order INTEGER,            -- Which ConditionalSpellEffect this belongs to (-1 for spell-level)
+                element_order INTEGER,                  -- Which ConditionalSpellElement this belongs to (-1 for spell-level)
+                requirement_list_sequence INTEGER,      -- Sequence number for nested RequirementLists at same location
                 m_applyNOT INTEGER,
                 m_operator INTEGER,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_list_sequence),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -231,6 +233,7 @@ class DatabaseSchema:
         "req_is_school": """
             CREATE TABLE req_is_school (
                 filename TEXT,
+                parent_type TEXT,                       -- 'conditional_element', 'spell_template', 'display_requirements'
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,              -- Position in m_requirements array
@@ -239,7 +242,7 @@ class DatabaseSchema:
                 m_targetType INTEGER,
                 m_magicSchoolName TEXT,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -248,6 +251,7 @@ class DatabaseSchema:
         "req_hanging_charm": """
             CREATE TABLE req_hanging_charm (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -258,7 +262,7 @@ class DatabaseSchema:
                 m_minCount INTEGER,
                 m_maxCount INTEGER,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -267,6 +271,7 @@ class DatabaseSchema:
         "req_hanging_ward": """
             CREATE TABLE req_hanging_ward (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -277,7 +282,7 @@ class DatabaseSchema:
                 m_minCount INTEGER,
                 m_maxCount INTEGER,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -286,6 +291,7 @@ class DatabaseSchema:
         "req_hanging_over_time": """
             CREATE TABLE req_hanging_over_time (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -296,7 +302,7 @@ class DatabaseSchema:
                 m_minCount INTEGER,
                 m_maxCount INTEGER,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -305,6 +311,7 @@ class DatabaseSchema:
         "req_hanging_effect_type": """
             CREATE TABLE req_hanging_effect_type (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -314,8 +321,14 @@ class DatabaseSchema:
                 m_effectType INTEGER,
                 m_minCount INTEGER,
                 m_maxCount INTEGER,
+                m_param_low INTEGER,
+                m_param_high INTEGER,
+                m_min_count INTEGER,
+                m_max_count INTEGER,
+                m_anyType INTEGER,
+                m_globalEffect INTEGER,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -324,6 +337,7 @@ class DatabaseSchema:
         "req_hanging_aura": """
             CREATE TABLE req_hanging_aura (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -333,8 +347,11 @@ class DatabaseSchema:
                 m_disposition INTEGER,
                 m_minCount INTEGER,
                 m_maxCount INTEGER,
+                m_effectType INTEGER,
+                m_anyType INTEGER,
+                m_globalEffect INTEGER,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -343,15 +360,16 @@ class DatabaseSchema:
         "req_school_of_focus": """
             CREATE TABLE req_school_of_focus (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
                 m_applyNOT INTEGER,
                 m_operator INTEGER,
                 m_targetType INTEGER,
-                m_magicSchoolName TEXT,
+                m_magicSchool TEXT,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -360,6 +378,7 @@ class DatabaseSchema:
         "req_minion": """
             CREATE TABLE req_minion (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -368,8 +387,9 @@ class DatabaseSchema:
                 m_targetType INTEGER,
                 m_minCount INTEGER,
                 m_maxCount INTEGER,
+                m_minionType TEXT,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -378,6 +398,7 @@ class DatabaseSchema:
         "req_has_entry": """
             CREATE TABLE req_has_entry (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -385,8 +406,11 @@ class DatabaseSchema:
                 m_operator INTEGER,
                 m_targetType INTEGER,
                 m_entryName TEXT,
+                m_displayName TEXT,
+                m_isQuestRegistry INTEGER,
+                m_questName TEXT,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -395,6 +419,7 @@ class DatabaseSchema:
         "req_combat_health": """
             CREATE TABLE req_combat_health (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -404,7 +429,7 @@ class DatabaseSchema:
                 m_fMinPercent REAL,
                 m_fMaxPercent REAL,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -413,6 +438,7 @@ class DatabaseSchema:
         "req_pvp_combat": """
             CREATE TABLE req_pvp_combat (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -420,7 +446,7 @@ class DatabaseSchema:
                 m_operator INTEGER,
                 m_targetType INTEGER,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -429,6 +455,7 @@ class DatabaseSchema:
         "req_shadow_pip_count": """
             CREATE TABLE req_shadow_pip_count (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -438,7 +465,7 @@ class DatabaseSchema:
                 m_minPips INTEGER,
                 m_maxPips INTEGER,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -447,6 +474,7 @@ class DatabaseSchema:
         "req_combat_status": """
             CREATE TABLE req_combat_status (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -454,8 +482,9 @@ class DatabaseSchema:
                 m_operator INTEGER,
                 m_targetType INTEGER,
                 m_combatStatus INTEGER,
+                m_status INTEGER,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -464,6 +493,7 @@ class DatabaseSchema:
         "req_pip_count": """
             CREATE TABLE req_pip_count (
                 filename TEXT,
+                parent_type TEXT,
                 parent_effect_order INTEGER,
                 element_order INTEGER,
                 requirement_order INTEGER,
@@ -473,7 +503,26 @@ class DatabaseSchema:
                 m_minPips INTEGER,
                 m_maxPips INTEGER,
                 
-                PRIMARY KEY (filename, parent_effect_order, element_order, requirement_order),
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
+                FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
+            )
+        """,
+        
+        # ReqMagicLevel table (788 occurrences)
+        "req_magic_level": """
+            CREATE TABLE req_magic_level (
+                filename TEXT,
+                parent_type TEXT,
+                parent_effect_order INTEGER,
+                element_order INTEGER,
+                requirement_order INTEGER,
+                m_applyNOT INTEGER,
+                m_magicSchool TEXT,
+                m_numericValue REAL,
+                m_operator INTEGER,
+                m_operatorType INTEGER,
+                
+                PRIMARY KEY (filename, parent_type, parent_effect_order, element_order, requirement_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
             )
         """,
@@ -767,6 +816,7 @@ class DatabaseSchema:
                 m_spellTemplateID INTEGER,
                 -- CountBasedSpellEffect specific fields
                 m_countThreshold INTEGER,
+                m_mode INTEGER,
                 
                 PRIMARY KEY (filename, effect_order, parent_table, parent_effect_order),
                 FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
@@ -970,6 +1020,21 @@ class DatabaseSchema:
                 spell_data TEXT,                        -- JSON dump of spell data for analysis
                 detected_at DATETIME DEFAULT CURRENT_TIMESTAMP
             )
+        """,
+        
+        # Skipped elements log
+        "skipped_elements": """
+            CREATE TABLE skipped_elements (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                filename TEXT,
+                element_path TEXT,                      -- e.g., "m_displayRequirements", "m_effects[2].m_unknownField"
+                element_type TEXT,                      -- e.g., "RequirementList", "UnknownEffectType"
+                reason TEXT,                            -- Why it was skipped
+                element_data TEXT,                      -- JSON dump of the element
+                detected_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                
+                FOREIGN KEY (filename) REFERENCES spell_cards(filename) ON DELETE CASCADE
+            )
         """
     }
     
@@ -1015,9 +1080,14 @@ class DatabaseSchema:
         "idx_req_shadow_pip_count_filename": "CREATE INDEX idx_req_shadow_pip_count_filename ON req_shadow_pip_count(filename)",
         "idx_req_combat_status_filename": "CREATE INDEX idx_req_combat_status_filename ON req_combat_status(filename)",
         "idx_req_pip_count_filename": "CREATE INDEX idx_req_pip_count_filename ON req_pip_count(filename)",
+        "idx_req_magic_level_filename": "CREATE INDEX idx_req_magic_level_filename ON req_magic_level(filename)",
         
         # Indexes on spell_ranks for pip costs
         "idx_spell_ranks_total_rank": "CREATE INDEX idx_spell_ranks_total_rank ON spell_ranks(m_spellRank)",
+        
+        # Indexes on skipped_elements for analysis
+        "idx_skipped_elements_filename": "CREATE INDEX idx_skipped_elements_filename ON skipped_elements(filename)",
+        "idx_skipped_elements_type": "CREATE INDEX idx_skipped_elements_type ON skipped_elements(element_type)",
     }
     
     @classmethod

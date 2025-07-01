@@ -61,6 +61,12 @@ class DatabaseCreator:
         # Error tracking for current spell
         self.current_spell_errors = []
         
+        # Skipped element tracking
+        self.skipped_elements = {}  # {filename: {element_path: (element_type, reason, data)}}
+        self.unhandled_fields = {}  # {filename: {field_name: value}}
+        self.skipped_element_types = {}  # {element_type: count}
+        self.total_skipped_elements = 0
+        
         # Auto-detect paths if not provided
         if not self.database_path:
             self._auto_detect_database_path()
@@ -216,6 +222,108 @@ class DatabaseCreator:
         except Exception as e:
             print(f"Error logging failed spell: {e}")
     
+    def _log_skipped_element(self, filename: str, element_path: str, 
+                            element_type: str, reason: str, element_data: Any = None):
+        """
+        Log any skipped element during processing
+        
+        Args:
+            filename: The spell filename
+            element_path: Path to the element (e.g., "m_displayRequirements", "m_effects[2].m_unknownField")
+            element_type: Type of the element (e.g., "RequirementList", "UnknownEffectType")
+            reason: Why it was skipped
+            element_data: The actual data that was skipped (optional)
+        """
+        try:
+            # Initialize filename entry if needed
+            if filename not in self.skipped_elements:
+                self.skipped_elements[filename] = {}
+            
+            # Store the skipped element
+            self.skipped_elements[filename][element_path] = (element_type, reason, element_data)
+            
+            # Track element type counts
+            self.skipped_element_types[element_type] = self.skipped_element_types.get(element_type, 0) + 1
+            self.total_skipped_elements += 1
+            
+            # Also log to database if connection exists
+            if self.cursor:
+                try:
+                    self.cursor.execute("""
+                        INSERT INTO skipped_elements (filename, element_path, element_type, reason, element_data)
+                        VALUES (?, ?, ?, ?, ?)
+                    """, (
+                        filename,
+                        element_path,
+                        element_type,
+                        reason,
+                        json.dumps(element_data, default=str) if element_data else None
+                    ))
+                except Exception as db_error:
+                    # Don't fail if DB logging fails, just print warning
+                    print(f"Warning: Could not log skipped element to DB: {db_error}")
+                    
+        except Exception as e:
+            print(f"Error logging skipped element: {e}")
+    
+    def _check_unhandled_fields(self, filename: str, dto: Any, raw_dict: Dict[str, Any], 
+                                path_prefix: str = ""):
+        """
+        Compare DTO fields with raw dict to find unhandled fields
+        
+        Args:
+            filename: The spell filename
+            dto: The DTO object created
+            raw_dict: The raw dictionary from JSON
+            path_prefix: Current path in the object hierarchy
+        """
+        try:
+            # Get all fields that exist in the DTO
+            dto_fields = set()
+            if hasattr(dto, '__dataclass_fields__'):
+                dto_fields = set(dto.__dataclass_fields__.keys())
+            elif hasattr(dto, '__dict__'):
+                dto_fields = set(dto.__dict__.keys())
+            
+            # Check each field in raw dict
+            for field_name, field_value in raw_dict.items():
+                # Skip internal fields
+                if field_name.startswith('$__'):
+                    continue
+                    
+                field_path = f"{path_prefix}.{field_name}" if path_prefix else field_name
+                
+                # Check if field exists in DTO
+                if field_name not in dto_fields:
+                    # This field was not handled!
+                    if filename not in self.unhandled_fields:
+                        self.unhandled_fields[filename] = {}
+                    
+                    self.unhandled_fields[filename][field_path] = field_value
+                    self._log_skipped_element(
+                        filename, 
+                        field_path,
+                        "UnhandledField",
+                        f"Field exists in raw data but not in {type(dto).__name__}",
+                        field_value
+                    )
+                # If field exists in DTO, recursively check nested objects
+                elif hasattr(dto, field_name):
+                    dto_value = getattr(dto, field_name)
+                    if isinstance(field_value, dict) and hasattr(dto_value, '__dict__'):
+                        # Recursive check for nested objects
+                        self._check_unhandled_fields(filename, dto_value, field_value, field_path)
+                    elif isinstance(field_value, list) and isinstance(dto_value, list):
+                        # Check lists of objects
+                        for i, (raw_item, dto_item) in enumerate(zip(field_value, dto_value)):
+                            if isinstance(raw_item, dict) and hasattr(dto_item, '__dict__'):
+                                self._check_unhandled_fields(
+                                    filename, dto_item, raw_item, f"{field_path}[{i}]"
+                                )
+                                
+        except Exception as e:
+            print(f"Error checking unhandled fields: {e}")
+    
     def insert_spell_data(self, filename: str, spell_dict: Dict[str, Any], spell_dto: Any) -> bool:
         """
         Insert spell data into the database
@@ -238,6 +346,9 @@ class DatabaseCreator:
                 self.log_duplicate(filename, "filename_collision", 
                                  f"Filename already exists in database", spell_dict)
                 return False
+            
+            # Check for unhandled fields in the DTO
+            self._check_unhandled_fields(filename, spell_dto, spell_dict)
             
             # Insert main spell data
             if not self._insert_main_spell_data(filename, spell_dict, spell_dto):
@@ -411,6 +522,22 @@ class DatabaseCreator:
                         VALUES (?, ?, ?)
                     """, (filename, target_order, str(target)))
             
+            # Process spell-level requirements (m_displayRequirements)
+            if hasattr(spell_dto, "m_displayRequirements") and spell_dto.m_displayRequirements:
+                try:
+                    self._insert_requirement_list(filename, "display_requirements", -1, -1, spell_dto.m_displayRequirements)
+                except Exception as e:
+                    error_msg = f"Error processing m_displayRequirements: {e}"
+                    print(f"ERROR: {error_msg} in {filename}")
+                    self.current_spell_errors.append(error_msg)
+                    self._log_skipped_element(
+                        filename,
+                        "m_displayRequirements",
+                        type(spell_dto.m_displayRequirements).__name__,
+                        f"Failed to process display requirements: {e}",
+                        spell_dto.m_displayRequirements.__dict__ if hasattr(spell_dto.m_displayRequirements, '__dict__') else str(spell_dto.m_displayRequirements)
+                    )
+            
             return True
             
         except Exception as e:
@@ -439,6 +566,13 @@ class DatabaseCreator:
                 error_msg = f"Raw dict effect found - DTO conversion failed (type: {effect.get('$__type', 'unknown')})"
                 print(f"WARNING: {error_msg} in {filename}")
                 self.current_spell_errors.append(error_msg)
+                self._log_skipped_element(
+                    filename,
+                    f"effects[{self.current_effect_counter}]",
+                    effect.get('$__type', 'unknown'),
+                    "DTO conversion failed",
+                    effect
+                )
                 return
             
             # Use and increment global effect counter
@@ -474,6 +608,13 @@ class DatabaseCreator:
                 error_msg = f"Unknown effect type: {effect_type}"
                 print(f"ERROR: {error_msg} in {filename}, value: {effect}")
                 self.current_spell_errors.append(error_msg)
+                self._log_skipped_element(
+                    filename,
+                    f"effects[{effect_order}]",
+                    effect_type,
+                    "Unknown effect type - no handler implemented",
+                    effect.__dict__ if hasattr(effect, '__dict__') else str(effect)
+                )
                 
         except Exception as e:
             error_msg = f"Exception in spell effect insertion: {e}"
@@ -592,7 +733,7 @@ class DatabaseCreator:
         
         # Handle requirements in m_pReqs
         if hasattr(element, "m_pReqs") and element.m_pReqs:
-            self._insert_requirement_list(filename, parent_effect_order, element_order, element.m_pReqs)
+            self._insert_requirement_list(filename, "conditional_element", parent_effect_order, element_order, element.m_pReqs)
     
     def _insert_variable_spell_effect(self, filename: str, effect_order: int, effect: Any, parent_table: str, parent_effect_order: int):
         """Insert VariableSpellEffect"""
@@ -771,10 +912,11 @@ class DatabaseCreator:
                 m_enchantmentSpellTemplateID, m_healModifier, m_numRounds,
                 m_paramPerRound, m_pipNum, m_protected, m_rank,
                 m_sDamageType, m_spellTemplateID,
-                m_countThreshold
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                m_countThreshold, m_mode
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (filename, effect_order, parent_table, parent_effect_order) + base_values + (
             getattr(effect, "m_countThreshold", 0),
+            getattr(effect, "m_mode", 0),
         ))
         
         # Handle nested effects in m_effectList
@@ -806,6 +948,22 @@ class DatabaseCreator:
                             INSERT INTO tiered_spell_next_tiers (filename, tier_order, next_tier_spell)
                             VALUES (?, ?, ?)
                         """, (filename, tier_order, str(next_tier)))
+                
+                # Process TieredSpellTemplate requirements (m_requirements)
+                if hasattr(spell_dto, "m_requirements") and spell_dto.m_requirements:
+                    try:
+                        self._insert_requirement_list(filename, "spell_template", -1, -1, spell_dto.m_requirements)
+                    except Exception as e:
+                        error_msg = f"Error processing m_requirements on TieredSpellTemplate: {e}"
+                        print(f"ERROR: {error_msg} in {filename}")
+                        self.current_spell_errors.append(error_msg)
+                        self._log_skipped_element(
+                            filename,
+                            "m_requirements",
+                            type(spell_dto.m_requirements).__name__,
+                            f"Failed to process tiered spell requirements: {e}",
+                            spell_dto.m_requirements.__dict__ if hasattr(spell_dto.m_requirements, '__dict__') else str(spell_dto.m_requirements)
+                        )
             
             # Handle other spell template types similarly...
             # (CantripsSpellTemplateDTO, CastleMagicSpellTemplateDTO, etc.)
@@ -816,16 +974,18 @@ class DatabaseCreator:
             print(f"Error inserting type-specific data: {e}")
             return False
     
-    def _insert_requirement_list(self, filename: str, parent_effect_order: int, element_order: int, req_list: Any):
+    def _insert_requirement_list(self, filename: str, parent_type: str, parent_effect_order: int, 
+                                element_order: int, req_list: Any):
         """Insert RequirementList into requirement_lists table"""
         try:
             # Insert RequirementList data
             self.cursor.execute("""
                 INSERT INTO requirement_lists (
-                    filename, parent_effect_order, element_order, m_applyNOT, m_operator
-                ) VALUES (?, ?, ?, ?, ?)
+                    filename, parent_type, parent_effect_order, element_order, m_applyNOT, m_operator
+                ) VALUES (?, ?, ?, ?, ?, ?)
             """, (
                 filename,
+                parent_type,
                 parent_effect_order,
                 element_order,
                 1 if getattr(req_list, "m_applyNOT", False) else 0,
@@ -835,47 +995,57 @@ class DatabaseCreator:
             # Handle individual requirements in m_requirements array
             if hasattr(req_list, "m_requirements") and req_list.m_requirements:
                 for requirement_order, requirement in enumerate(req_list.m_requirements):
-                    self._insert_individual_requirement(filename, parent_effect_order, element_order, requirement_order, requirement)
+                    # Check if this is a nested RequirementList
+                    if type(requirement).__name__ == "RequirementListDTO":
+                        # Handle nested RequirementList (like in the ReqHasEntry example)
+                        self._insert_requirement_list(filename, parent_type, parent_effect_order, 
+                                                    element_order, requirement)
+                    else:
+                        self._insert_individual_requirement(filename, parent_type, parent_effect_order, 
+                                                          element_order, requirement_order, requirement)
                     
         except Exception as e:
             error_msg = f"Error inserting requirement list: {e}"
             print(f"ERROR: {error_msg} in {filename}")
             self.current_spell_errors.append(error_msg)
     
-    def _insert_individual_requirement(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, requirement: Any):
+    def _insert_individual_requirement(self, filename: str, parent_type: str, parent_effect_order: int, 
+                                     element_order: int, requirement_order: int, requirement: Any):
         """Insert individual requirement into appropriate table based on type"""
         try:
             requirement_type = type(requirement).__name__
             
             # Route to appropriate insert method based on requirement type
             if requirement_type == "ReqIsSchoolDTO":
-                self._insert_req_is_school(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_is_school(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqHangingCharmDTO":
-                self._insert_req_hanging_charm(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_hanging_charm(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqHangingWardDTO":
-                self._insert_req_hanging_ward(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_hanging_ward(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqHangingOverTimeDTO":
-                self._insert_req_hanging_over_time(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_hanging_over_time(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqHangingEffectTypeDTO":
-                self._insert_req_hanging_effect_type(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_hanging_effect_type(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqHangingAuraDTO":
-                self._insert_req_hanging_aura(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_hanging_aura(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqSchoolOfFocusDTO":
-                self._insert_req_school_of_focus(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_school_of_focus(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqMinionDTO":
-                self._insert_req_minion(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_minion(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqHasEntryDTO":
-                self._insert_req_has_entry(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_has_entry(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqCombatHealthDTO":
-                self._insert_req_combat_health(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_combat_health(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqPvPCombatDTO":
-                self._insert_req_pvp_combat(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_pvp_combat(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqShadowPipCountDTO":
-                self._insert_req_shadow_pip_count(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_shadow_pip_count(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqCombatStatusDTO":
-                self._insert_req_combat_status(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_combat_status(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             elif requirement_type == "ReqPipCountDTO":
-                self._insert_req_pip_count(filename, parent_effect_order, element_order, requirement_order, requirement)
+                self._insert_req_pip_count(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
+            elif requirement_type == "ReqMagicLevelDTO":
+                self._insert_req_magic_level(filename, parent_type, parent_effect_order, element_order, requirement_order, requirement)
             else:
                 error_msg = f"Unknown requirement type: {requirement_type}"
                 print(f"ERROR: {error_msg} in {filename}")
@@ -888,30 +1058,31 @@ class DatabaseCreator:
     
     # Individual requirement insertion methods
     
-    def _insert_req_is_school(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_is_school(self, filename: str, parent_type: str, parent_effect_order: int, 
+                             element_order: int, requirement_order: int, req: Any):
         """Insert ReqIsSchool requirement"""
         self.cursor.execute("""
             INSERT INTO req_is_school (
-                filename, parent_effect_order, element_order, requirement_order,
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
                 m_applyNOT, m_operator, m_targetType, m_magicSchoolName
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
             getattr(req, "m_magicSchoolName", "")
         ))
     
-    def _insert_req_hanging_charm(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_hanging_charm(self, filename: str, parent_type: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
         """Insert ReqHangingCharm requirement"""
         self.cursor.execute("""
             INSERT INTO req_hanging_charm (
-                filename, parent_effect_order, element_order, requirement_order,
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
                 m_applyNOT, m_operator, m_targetType, m_disposition, m_minCount, m_maxCount
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
@@ -920,15 +1091,15 @@ class DatabaseCreator:
             getattr(req, "m_maxCount", 0)
         ))
     
-    def _insert_req_hanging_ward(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_hanging_ward(self, filename: str, parent_type: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
         """Insert ReqHangingWard requirement"""
         self.cursor.execute("""
             INSERT INTO req_hanging_ward (
-                filename, parent_effect_order, element_order, requirement_order,
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
                 m_applyNOT, m_operator, m_targetType, m_disposition, m_minCount, m_maxCount
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
@@ -937,15 +1108,15 @@ class DatabaseCreator:
             getattr(req, "m_maxCount", 0)
         ))
     
-    def _insert_req_hanging_over_time(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_hanging_over_time(self, filename: str, parent_type: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
         """Insert ReqHangingOverTime requirement"""
         self.cursor.execute("""
             INSERT INTO req_hanging_over_time (
-                filename, parent_effect_order, element_order, requirement_order,
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
                 m_applyNOT, m_operator, m_targetType, m_disposition, m_minCount, m_maxCount
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
@@ -954,95 +1125,114 @@ class DatabaseCreator:
             getattr(req, "m_maxCount", 0)
         ))
     
-    def _insert_req_hanging_effect_type(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_hanging_effect_type(self, filename: str, parent_type: str, parent_effect_order: int, 
+                                       element_order: int, requirement_order: int, req: Any):
         """Insert ReqHangingEffectType requirement"""
         self.cursor.execute("""
             INSERT INTO req_hanging_effect_type (
-                filename, parent_effect_order, element_order, requirement_order,
-                m_applyNOT, m_operator, m_targetType, m_effectType, m_minCount, m_maxCount
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
+                m_applyNOT, m_operator, m_targetType, m_effectType, m_minCount, m_maxCount,
+                m_param_low, m_param_high, m_min_count, m_max_count, m_anyType, m_globalEffect
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
             getattr(req, "m_effectType", 0),
             getattr(req, "m_minCount", 0),
-            getattr(req, "m_maxCount", 0)
+            getattr(req, "m_maxCount", 0),
+            getattr(req, "m_param_low", 0),
+            getattr(req, "m_param_high", 0),
+            getattr(req, "m_min_count", 0),
+            getattr(req, "m_max_count", 0),
+            1 if getattr(req, "m_anyType", False) else 0,
+            1 if getattr(req, "m_globalEffect", False) else 0
         ))
     
-    def _insert_req_hanging_aura(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_hanging_aura(self, filename: str, parent_type: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
         """Insert ReqHangingAura requirement"""
         self.cursor.execute("""
             INSERT INTO req_hanging_aura (
-                filename, parent_effect_order, element_order, requirement_order,
-                m_applyNOT, m_operator, m_targetType, m_disposition, m_minCount, m_maxCount
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
+                m_applyNOT, m_operator, m_targetType, m_disposition, m_minCount, m_maxCount,
+                m_effectType, m_anyType, m_globalEffect
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
             getattr(req, "m_disposition", 0),
             getattr(req, "m_minCount", 0),
-            getattr(req, "m_maxCount", 0)
+            getattr(req, "m_maxCount", 0),
+            getattr(req, "m_effectType", 0),
+            1 if getattr(req, "m_anyType", False) else 0,
+            1 if getattr(req, "m_globalEffect", False) else 0
         ))
     
-    def _insert_req_school_of_focus(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_school_of_focus(self, filename: str, parent_type: str, parent_effect_order: int, 
+                                   element_order: int, requirement_order: int, req: Any):
         """Insert ReqSchoolOfFocus requirement"""
         self.cursor.execute("""
             INSERT INTO req_school_of_focus (
-                filename, parent_effect_order, element_order, requirement_order,
-                m_applyNOT, m_operator, m_targetType, m_magicSchoolName
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
+                m_applyNOT, m_operator, m_targetType, m_magicSchool
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
-            getattr(req, "m_magicSchoolName", "")
+            getattr(req, "m_magicSchool", "")
         ))
     
-    def _insert_req_minion(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_minion(self, filename: str, parent_type: str, parent_effect_order: int, 
+                          element_order: int, requirement_order: int, req: Any):
         """Insert ReqMinion requirement"""
         self.cursor.execute("""
             INSERT INTO req_minion (
-                filename, parent_effect_order, element_order, requirement_order,
-                m_applyNOT, m_operator, m_targetType, m_minCount, m_maxCount
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
+                m_applyNOT, m_operator, m_targetType, m_minCount, m_maxCount, m_minionType
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
             getattr(req, "m_minCount", 0),
-            getattr(req, "m_maxCount", 0)
+            getattr(req, "m_maxCount", 0),
+            getattr(req, "m_minionType", "")
         ))
     
-    def _insert_req_has_entry(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_has_entry(self, filename: str, parent_type: str, parent_effect_order: int, 
+                             element_order: int, requirement_order: int, req: Any):
         """Insert ReqHasEntry requirement"""
         self.cursor.execute("""
             INSERT INTO req_has_entry (
-                filename, parent_effect_order, element_order, requirement_order,
-                m_applyNOT, m_operator, m_targetType, m_entryName
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
+                m_applyNOT, m_operator, m_targetType, m_entryName, m_displayName, m_isQuestRegistry, m_questName
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
-            getattr(req, "m_entryName", "")
+            getattr(req, "m_entryName", ""),
+            getattr(req, "m_displayName", ""),
+            1 if getattr(req, "m_isQuestRegistry", False) else 0,
+            getattr(req, "m_questName", "")
         ))
     
-    def _insert_req_combat_health(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_combat_health(self, filename: str, parent_type: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
         """Insert ReqCombatHealth requirement"""
         self.cursor.execute("""
             INSERT INTO req_combat_health (
-                filename, parent_effect_order, element_order, requirement_order,
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
                 m_applyNOT, m_operator, m_targetType, m_fMinPercent, m_fMaxPercent
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
@@ -1050,29 +1240,29 @@ class DatabaseCreator:
             getattr(req, "m_fMaxPercent", 0.0)
         ))
     
-    def _insert_req_pvp_combat(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_pvp_combat(self, filename: str, parent_type: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
         """Insert ReqPvPCombat requirement"""
         self.cursor.execute("""
             INSERT INTO req_pvp_combat (
-                filename, parent_effect_order, element_order, requirement_order,
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
                 m_applyNOT, m_operator, m_targetType
-            ) VALUES (?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0)
         ))
     
-    def _insert_req_shadow_pip_count(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_shadow_pip_count(self, filename: str, parent_type: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
         """Insert ReqShadowPipCount requirement"""
         self.cursor.execute("""
             INSERT INTO req_shadow_pip_count (
-                filename, parent_effect_order, element_order, requirement_order,
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
                 m_applyNOT, m_operator, m_targetType, m_minPips, m_maxPips
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
@@ -1080,35 +1270,52 @@ class DatabaseCreator:
             getattr(req, "m_maxPips", 0)
         ))
     
-    def _insert_req_combat_status(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_combat_status(self, filename: str, parent_type: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
         """Insert ReqCombatStatus requirement"""
         self.cursor.execute("""
             INSERT INTO req_combat_status (
-                filename, parent_effect_order, element_order, requirement_order,
-                m_applyNOT, m_operator, m_targetType, m_combatStatus
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
+                m_applyNOT, m_operator, m_targetType, m_combatStatus, m_status
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
-            getattr(req, "m_combatStatus", 0)
+            getattr(req, "m_combatStatus", 0),
+            getattr(req, "m_status", 0)
         ))
     
-    def _insert_req_pip_count(self, filename: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+    def _insert_req_pip_count(self, filename: str, parent_type: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
         """Insert ReqPipCount requirement"""
         self.cursor.execute("""
             INSERT INTO req_pip_count (
-                filename, parent_effect_order, element_order, requirement_order,
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
                 m_applyNOT, m_operator, m_targetType, m_minPips, m_maxPips
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            filename, parent_effect_order, element_order, requirement_order,
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
             1 if getattr(req, "m_applyNOT", False) else 0,
             getattr(req, "m_operator", 0),
             getattr(req, "m_targetType", 0),
             getattr(req, "m_minPips", 0),
             getattr(req, "m_maxPips", 0)
+        ))
+    
+    def _insert_req_magic_level(self, filename: str, parent_type: str, parent_effect_order: int, element_order: int, requirement_order: int, req: Any):
+        """Insert ReqMagicLevel requirement"""
+        self.cursor.execute("""
+            INSERT INTO req_magic_level (
+                filename, parent_type, parent_effect_order, element_order, requirement_order,
+                m_applyNOT, m_magicSchool, m_numericValue, m_operator, m_operatorType
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            filename, parent_type, parent_effect_order, element_order, requirement_order,
+            1 if getattr(req, "m_applyNOT", False) else 0,
+            getattr(req, "m_magicSchool", ""),
+            getattr(req, "m_numericValue", 0.0),
+            getattr(req, "m_operator", 0),
+            getattr(req, "m_operatorType", 0)
         ))
     
     def process_all_spells(self) -> bool:
@@ -1193,6 +1400,70 @@ class DatabaseCreator:
         except Exception as e:
             print(f"Error inserting processing metadata: {e}")
     
+    def _generate_skipped_elements_report(self) -> str:
+        """Generate detailed report of skipped elements"""
+        if not self.skipped_elements and not self.unhandled_fields:
+            return "No elements were skipped - all data was processed successfully!"
+        
+        report_lines = []
+        report_lines.append("=== SKIPPED ELEMENTS SUMMARY ===")
+        report_lines.append(f"Total Skipped: {self.total_skipped_elements} elements across {len(self.skipped_elements)} files")
+        report_lines.append("")
+        
+        # Summary by type
+        if self.skipped_element_types:
+            report_lines.append("By Type:")
+            for element_type, count in sorted(self.skipped_element_types.items(), key=lambda x: x[1], reverse=True):
+                report_lines.append(f"  - {element_type}: {count} occurrences")
+            report_lines.append("")
+        
+        # Top problematic files
+        if self.skipped_elements:
+            file_counts = {filename: len(elements) for filename, elements in self.skipped_elements.items()}
+            top_files = sorted(file_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+            
+            report_lines.append("Top Problematic Files:")
+            for filename, count in top_files:
+                report_lines.append(f"  - {filename}: {count} skipped elements")
+            report_lines.append("")
+        
+        # Unhandled fields summary
+        if self.unhandled_fields:
+            report_lines.append("Unhandled Fields:")
+            all_unhandled = {}
+            for filename, fields in self.unhandled_fields.items():
+                for field_path in fields.keys():
+                    all_unhandled[field_path] = all_unhandled.get(field_path, 0) + 1
+            
+            for field_path, count in sorted(all_unhandled.items(), key=lambda x: x[1], reverse=True)[:20]:
+                report_lines.append(f"  - {field_path}: {count} files affected")
+            report_lines.append("")
+        
+        return "\n".join(report_lines)
+    
+    def _save_detailed_skipped_report(self):
+        """Save detailed skipped elements report to file"""
+        try:
+            report_file = self.failed_spells_dir / "skipped_elements_detailed.json"
+            detailed_report = {
+                "summary": {
+                    "total_skipped": self.total_skipped_elements,
+                    "files_affected": len(self.skipped_elements),
+                    "element_types": self.skipped_element_types,
+                    "generation_time": datetime.now().isoformat()
+                },
+                "skipped_elements": self.skipped_elements,
+                "unhandled_fields": self.unhandled_fields
+            }
+            
+            with open(report_file, 'w', encoding='utf-8') as f:
+                json.dump(detailed_report, f, indent=2, default=str)
+                
+            print(f"Detailed skipped elements report saved to: {report_file}")
+            
+        except Exception as e:
+            print(f"Error saving detailed skipped report: {e}")
+    
     def print_summary(self):
         """Print processing summary"""
         duration = self.processing_end_time - self.processing_start_time if self.processing_end_time else None
@@ -1213,6 +1484,12 @@ class DatabaseCreator:
         if self.duplicate_count > 0:
             print(f"\nWARNING: {self.duplicate_count} duplicate filenames found!")
             print("Check failed_spells/ directory for analysis")
+        
+        # Print skipped elements summary
+        print("\n" + self._generate_skipped_elements_report())
+        
+        # Save detailed report
+        self._save_detailed_skipped_report()
     
     def cleanup(self):
         """Clean up resources"""
