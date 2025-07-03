@@ -261,7 +261,7 @@ class EffectTypeDiscoverer:
     
     def save_report(self, report_data: Dict[str, Any]):
         """Save report to JSON file"""
-        report_file = Path("../failed_spells/effect_types_discovery_report.json")
+        report_file = Path("../../Reports/Spell Reports/effect_types_discovery_report.json")
         report_file.parent.mkdir(exist_ok=True)
         
         with open(report_file, 'w', encoding='utf-8') as f:

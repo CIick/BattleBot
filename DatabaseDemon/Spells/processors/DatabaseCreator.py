@@ -80,7 +80,7 @@ class DatabaseCreator:
     
     def _auto_detect_failed_spells_dir(self):
         """Auto-detect failed spells directory"""
-        self.failed_spells_dir = Path("failed_spells")
+        self.failed_spells_dir = Path("../../Reports/Spell Reports")
     
     def initialize(self) -> bool:
         """

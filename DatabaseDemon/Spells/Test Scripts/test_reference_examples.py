@@ -23,7 +23,7 @@ class ReferenceExampleTester:
     
     def __init__(self):
         self.reference_dir = Path("../Reference SpellClass Examples")
-        self.db_path = Path("database/r777820.Wizard_1_580_0_Live_spells - Backup.db")
+        self.db_path = Path("../database/r777820.Wizard_1_580_0_Live_spells - Backup.db")
         self.processor = None
         self.test_results = []
     

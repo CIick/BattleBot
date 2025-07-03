@@ -77,7 +77,7 @@ class MobDatabaseCreator:
     
     def _auto_detect_failed_mobs_dir(self):
         """Auto-detect failed mobs directory"""
-        self.failed_mobs_dir = Path("failed_mobs")
+        self.failed_mobs_dir = Path("../../Reports/Mob Reports")
     
     def initialize(self) -> bool:
         """
