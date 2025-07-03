@@ -516,7 +516,7 @@ def main():
     
     # Generate summary report
     summary = generator.generate_summary_report()
-    with open("../Reports/enhanced_dto_summary.txt", 'w', encoding='utf-8') as f:
+    with open("../Reports/Spell Reports/enhanced_dto_summary.txt", 'w', encoding='utf-8') as f:
         f.write(summary)
     
     print("\n" + "=" * 50)

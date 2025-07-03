@@ -268,7 +268,7 @@ def main():
     analysis_data = analyze_spells(archive, type_list)
     
     # Write report
-    output_file = "../Reports/spell_analysis_report.txt"
+    output_file = "../Reports/Spell Reports/spell_analysis_report.txt"
     print(f"\nWriting analysis report...")
     write_analysis_report(analysis_data, output_file)
     

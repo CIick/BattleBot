@@ -297,7 +297,7 @@ def main():
     """Main function to run the nested type analysis"""
     # Paths
     types_json_path = "../r777820_Wizard_1_580_0_Live.json"
-    reference_examples_dir = "../Reference SpellClass Examples"
+    reference_examples_dir = "../Reference Material/Spells/Reference Spells Examples"
     
     # Check paths exist
     if not Path(types_json_path).exists():
@@ -313,7 +313,7 @@ def main():
     report = analyzer.run_complete_analysis()
     
     # Save report
-    output_file = "../Reports/nested_type_analysis_report.txt"
+    output_file = "../Reports/Spell Reports/nested_type_analysis_report.txt"
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(report)
     

@@ -33,4 +33,5 @@ _ReSharper*/
 packages/
 __pycache__
 failed_spells
+failed_mobs
 database

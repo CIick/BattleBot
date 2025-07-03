@@ -55,7 +55,7 @@ class SpellProcessingManager:
     def start_processing(self):
         """Initialize the processing"""
         self.open_next_output_file()
-        self.failure_log_handle = open("../Reports/spell_failures.txt", 'w', encoding='utf-8')
+        self.failure_log_handle = open("../Reports/Spell Reports/spell_failures.txt", 'w', encoding='utf-8')
         self.failure_log_handle.write("Wizard101 Spell DTO Failure Analysis\n")
         self.failure_log_handle.write("=" * 50 + "\n\n")
     

@@ -1,0 +1,96 @@
+
+        "185541179": {
+            "name": "class PathBehaviorTemplate",
+            "bases": [
+                "BehaviorTemplate",
+                "PropertyClass"
+            ],
+            "hash": 185541179,
+            "properties": {
+                "m_behaviorName": {
+                    "type": "std::string",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3130754092
+                },
+                "m_kPathType": {
+                    "type": "enum PathBehaviorTemplate::PathType",
+                    "id": 1,
+                    "offset": 120,
+                    "flags": 2097159,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2890959924,
+                    "enum_options": {
+                        "PT_LOOP": 0,
+                        "PT_CHAIN": 1,
+                        "PT_RANDOM": 2
+                    }
+                },
+                "m_pathID": {
+                    "type": "gid",
+                    "id": 2,
+                    "offset": 128,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 821494322
+                },
+                "m_nPathDirection": {
+                    "type": "int",
+                    "id": 3,
+                    "offset": 136,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2081830230,
+                    "enum_options": {
+                        "__DEFAULT": 1
+                    }
+                },
+                "m_actionList": {
+                    "type": "class SharedPointer<class PathBehaviorTemplate::Action>",
+                    "id": 4,
+                    "offset": 144,
+                    "flags": 7,
+                    "container": "List",
+                    "dynamic": true,
+                    "singleton": false,
+                    "pointer": true,
+                    "hash": 2665183795
+                },
+                "m_pauseChance": {
+                    "type": "unsigned int",
+                    "id": 5,
+                    "offset": 160,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 821317997
+                },
+                "m_timeToPause": {
+                    "type": "float",
+                    "id": 6,
+                    "offset": 164,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 408413991
+                }
+            }
+        },

@@ -1,0 +1,55 @@
+
+        "892480983": {
+            "name": "class EquipmentBehaviorTemplate",
+            "bases": [
+                "BehaviorTemplate",
+                "PropertyClass"
+            ],
+            "hash": 892480983,
+            "properties": {
+                "m_behaviorName": {
+                    "type": "std::string",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3130754092
+                },
+                "m_itemList": {
+                    "type": "unsigned int",
+                    "id": 1,
+                    "offset": 120,
+                    "flags": 33554439,
+                    "container": "List",
+                    "dynamic": true,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1892907768
+                },
+                "m_equipmentTemplate": {
+                    "type": "std::string",
+                    "id": 2,
+                    "offset": 152,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2464606287
+                },
+                "m_infoList": {
+                    "type": "class SharedPointer<class EquippedItemInfo>",
+                    "id": 3,
+                    "offset": 136,
+                    "flags": 7,
+                    "container": "List",
+                    "dynamic": true,
+                    "singleton": false,
+                    "pointer": true,
+                    "hash": 1525681909
+                }
+            }
+        },

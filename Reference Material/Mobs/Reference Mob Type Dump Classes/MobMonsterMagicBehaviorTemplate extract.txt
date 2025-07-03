@@ -1,0 +1,154 @@
+
+        "959047476": {
+            "name": "class MobMonsterMagicBehaviorTemplate",
+            "bases": [
+                "BehaviorTemplate",
+                "PropertyClass"
+            ],
+            "hash": 959047476,
+            "properties": {
+                "m_behaviorName": {
+                    "type": "std::string",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3130754092
+                },
+                "m_worldName": {
+                    "type": "std::string",
+                    "id": 1,
+                    "offset": 120,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1846757476
+                },
+                "m_collectionResistance": {
+                    "type": "int",
+                    "id": 2,
+                    "offset": 152,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 717150423
+                },
+                "m_isBoss": {
+                    "type": "bool",
+                    "id": 3,
+                    "offset": 156,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 569602950
+                },
+                "m_essencesPerSummonTC": {
+                    "type": "int",
+                    "id": 4,
+                    "offset": 160,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2052433520
+                },
+                "m_goldPerSummonTC": {
+                    "type": "int",
+                    "id": 5,
+                    "offset": 164,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1978867293
+                },
+                "m_essencesPerHouseGuest": {
+                    "type": "int",
+                    "id": 6,
+                    "offset": 168,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 254219206
+                },
+                "m_goldPerHouseGuest": {
+                    "type": "int",
+                    "id": 7,
+                    "offset": 172,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1744976627
+                },
+                "m_essencesPerKillTC": {
+                    "type": "int",
+                    "id": 8,
+                    "offset": 176,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 305653757
+                },
+                "m_goldPerKillTC": {
+                    "type": "int",
+                    "id": 9,
+                    "offset": 180,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 910983338
+                },
+                "m_houseGuestTemplateID": {
+                    "type": "unsigned int",
+                    "id": 10,
+                    "offset": 184,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 612813314
+                },
+                "m_alternateMobTemplateID": {
+                    "type": "unsigned int",
+                    "id": 11,
+                    "offset": 188,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 233156212
+                },
+                "m_collectedAsTemplateID": {
+                    "type": "unsigned int",
+                    "id": 12,
+                    "offset": 232,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1661926425
+                }
+            }
+        },

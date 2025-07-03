@@ -22,7 +22,7 @@ def test_reference_examples():
     """Test creating DTOs from all reference examples"""
     print("\n=== Testing Reference Examples ===")
     
-    reference_dir = Path("../Reference SpellClass Examples")
+    reference_dir = Path("../Reference Material/Spells/Reference Spells Examples")
     if not reference_dir.exists():
         print("[FAIL] Reference examples directory not found")
         return False
@@ -88,7 +88,8 @@ def test_specific_features():
     # Test 1: TieredSpellTemplate inheritance
     print("\nTest 1: TieredSpellTemplate inheritance")
     try:
-        tiered_file = Path("../Reference SpellClass Examples/3PFrostDragon_Trainable - T02 - A.json")
+        tiered_file = Path(
+            "../Reference Material/Spells/Reference Spells Examples/3PFrostDragon_Trainable - T02 - A.json")
         with open(tiered_file, 'r', encoding='utf-8') as f:
             spell_data = json.load(f)
         

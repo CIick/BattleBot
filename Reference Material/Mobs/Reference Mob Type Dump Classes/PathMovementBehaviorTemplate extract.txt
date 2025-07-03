@@ -1,0 +1,44 @@
+
+        "1443896326": {
+            "name": "class PathMovementBehaviorTemplate",
+            "bases": [
+                "BehaviorTemplate",
+                "PropertyClass"
+            ],
+            "hash": 1443896326,
+            "properties": {
+                "m_behaviorName": {
+                    "type": "std::string",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3130754092
+                },
+                "m_movementSpeed": {
+                    "type": "float",
+                    "id": 1,
+                    "offset": 120,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 769135219
+                },
+                "m_movementScale": {
+                    "type": "float",
+                    "id": 2,
+                    "offset": 124,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 768663914
+                }
+            }
+        },

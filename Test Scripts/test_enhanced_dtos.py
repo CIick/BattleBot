@@ -373,7 +373,7 @@ class EnhancedDTOValidator:
 
 def main():
     """Main test function"""
-    reference_examples_dir = "../Reference SpellClass Examples"
+    reference_examples_dir = "../Reference Material/Spells/Reference Spells Examples"
     
     if not Path(reference_examples_dir).exists():
         print(f"Error: Reference examples directory not found: {reference_examples_dir}")

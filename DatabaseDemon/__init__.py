@@ -1,18 +1,21 @@
 """
-DatabaseDemon - Wizard101 Spell Database Creation System
+DatabaseDemon - Wizard101 Object Database Creation System
 ========================================================
-Automated database creation from Wizard101 Root.wad spell data.
+Automated database creation from Wizard101 WAD data for multiple object types.
 
-Main Components:
-- dtos/: Data Transfer Objects for spell data structures
-- processors/: WAD processing, database creation, and revision detection
-- database_creator.py: Main entry point script
+Modules:
+- Spells/: Spell database creation system
+- Mobs/: Mob database creation system (future)
+- Items/: Item database creation system (future)
+
+Shared Resources:
+- types.json: Type hash mappings for all Wizard101 objects
 
 Usage:
-    cd DatabaseDemon
+    cd DatabaseDemon/Spells
     python database_creator.py
 """
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 __author__ = "Claude Code"
-__description__ = "Wizard101 Spell Database Creation System"
+__description__ = "Wizard101 Multi-Object Database Creation System"

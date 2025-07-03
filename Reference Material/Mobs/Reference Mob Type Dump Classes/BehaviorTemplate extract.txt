@@ -1,0 +1,21 @@
+
+        "360231646": {
+            "name": "class BehaviorTemplate",
+            "bases": [
+                "PropertyClass"
+            ],
+            "hash": 360231646,
+            "properties": {
+                "m_behaviorName": {
+                    "type": "std::string",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3130754092
+                }
+            }
+        },

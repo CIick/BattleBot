@@ -1,0 +1,208 @@
+
+        "1701337223": {
+            "name": "class NPCBehaviorTemplate",
+            "bases": [
+                "BehaviorTemplate",
+                "PropertyClass"
+            ],
+            "hash": 1701337223,
+            "properties": {
+                "m_behaviorName": {
+                    "type": "std::string",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3130754092
+                },
+                "m_nStartingHealth": {
+                    "type": "int",
+                    "id": 1,
+                    "offset": 120,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 317221834
+                },
+                "m_HideCurrentHP": {
+                    "type": "bool",
+                    "id": 2,
+                    "offset": 124,
+                    "flags": 263,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 31360456
+                },
+                "m_nLevel": {
+                    "type": "int",
+                    "id": 3,
+                    "offset": 128,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 717812768
+                },
+                "m_fIntelligence": {
+                    "type": "float",
+                    "id": 4,
+                    "offset": 132,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1871176720
+                },
+                "m_fSelfishFactor": {
+                    "type": "float",
+                    "id": 5,
+                    "offset": 136,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1823445130
+                },
+                "m_nameColor": {
+                    "type": "class Color",
+                    "id": 6,
+                    "offset": 152,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3103779710
+                },
+                "m_bossMob": {
+                    "type": "bool",
+                    "id": 7,
+                    "offset": 144,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 986129576
+                },
+                "m_turnTowardsPlayer": {
+                    "type": "bool",
+                    "id": 8,
+                    "offset": 145,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1881705133
+                },
+                "m_mobTitle": {
+                    "type": "enum NPCBehaviorTemplate::TITLE_TYPE",
+                    "id": 9,
+                    "offset": 148,
+                    "flags": 2097159,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2205905992,
+                    "enum_options": {
+                        "Easy": 0,
+                        "Normal": 1,
+                        "Elite": 2,
+                        "Boss": 3,
+                        "Minion": 4
+                    }
+                },
+                "m_schoolOfFocus": {
+                    "type": "std::string",
+                    "id": 10,
+                    "offset": 160,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1523233848
+                },
+                "m_nAggressiveFactor": {
+                    "type": "int",
+                    "id": 11,
+                    "offset": 140,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 783108599
+                },
+                "m_triggerList": {
+                    "type": "std::string",
+                    "id": 12,
+                    "offset": 232,
+                    "flags": 268435463,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3100120619,
+                    "enum_options": {
+                        "__BASECLASS": "CombatTriggerList"
+                    }
+                },
+                "m_cylinderScaleValue": {
+                    "type": "float",
+                    "id": 13,
+                    "offset": 268,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1227245334
+                },
+                "m_maxShadowPips": {
+                    "type": "int",
+                    "id": 14,
+                    "offset": 272,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 985142882
+                },
+                "m_baseEffects": {
+                    "type": "class SharedPointer<class GameEffectInfo>",
+                    "id": 15,
+                    "offset": 280,
+                    "flags": 7,
+                    "container": "List",
+                    "dynamic": true,
+                    "singleton": false,
+                    "pointer": true,
+                    "hash": 1726069264
+                },
+                "m_secondarySchoolOfFocus": {
+                    "type": "std::string",
+                    "id": 16,
+                    "offset": 200,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3043326464
+                }
+            }
+        },

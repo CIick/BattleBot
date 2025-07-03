@@ -22,7 +22,7 @@ def test_reference_examples():
     """Test creating DTOs from all reference examples"""
     print("\n=== Testing Reference Examples ===")
     
-    reference_dir = Path("../Reference SpellClass Examples")
+    reference_dir = Path("../Reference Material/Spells/Reference Spells Examples")
     if not reference_dir.exists():
         print("[FAIL] Reference examples directory not found")
         return False
@@ -87,7 +87,8 @@ def test_deep_nesting():
     
     try:
         # Test with FrostDragon which has RandomSpellEffect with effect list
-        dragon_file = Path("../Reference SpellClass Examples/3PFrostDragon_Trainable - T02 - A.json")
+        dragon_file = Path(
+            "../Reference Material/Spells/Reference Spells Examples/3PFrostDragon_Trainable - T02 - A.json")
         with open(dragon_file, 'r', encoding='utf-8') as f:
             spell_data = json.load(f)
         
@@ -142,7 +143,7 @@ def test_inheritance():
     
     for filename, expected_type in test_cases:
         try:
-            file_path = Path("../Reference SpellClass Examples") / filename
+            file_path = Path("../Reference Material/Spells/Reference Spells Examples") / filename
             with open(file_path, 'r', encoding='utf-8') as f:
                 spell_data = json.load(f)
             

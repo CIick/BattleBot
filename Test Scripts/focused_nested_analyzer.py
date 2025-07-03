@@ -383,7 +383,7 @@ class FocusedNestedAnalyzer:
 
 def main():
     """Main function"""
-    reference_examples_dir = "../Reference SpellClass Examples"
+    reference_examples_dir = "../Reference Material/Spells/Reference Spells Examples"
     types_json_path = "../r777820_Wizard_1_580_0_Live.json"
     
     # Check paths
@@ -400,7 +400,7 @@ def main():
     report, dto_specs = analyzer.run_focused_analysis()
     
     # Save report
-    with open("../Reports/focused_nested_analysis_report.txt", 'w', encoding='utf-8') as f:
+    with open("../Reports/Spell Reports/focused_nested_analysis_report.txt", 'w', encoding='utf-8') as f:
         f.write(report)
     
     # Save DTO specifications
