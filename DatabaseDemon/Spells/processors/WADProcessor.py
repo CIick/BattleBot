@@ -18,11 +18,14 @@ import katsuba
 from katsuba.wad import Archive
 from katsuba.op import LazyObject, LazyList, TypeList, Serializer, SerializerOptions
 
+# Add parent directories to Python path for imports
+sys.path.append(str(Path(__file__).parent.parent.parent))  # DatabaseDemon level
+sys.path.append(str(Path(__file__).parent.parent))         # Spells level
+
 # Import centralized conversion utility
-from ...utils.conversion_utils import convert_lazy_object_to_dict
+from utils.conversion_utils import convert_lazy_object_to_dict
 
 # Import our DTOs
-sys.path.append(str(Path(__file__).parent.parent))
 from dtos import FixedSpellDTOFactory
 
 
@@ -59,12 +62,12 @@ class WADProcessor:
             if not self.wad_path:
                 self.wad_path = Path("C:/ProgramData/KingsIsle Entertainment/Wizard101/Data/GameData/Root.wad")
             if not self.types_path:
-                self.types_path = Path("../../types.json")  # Look in DatabaseDemon folder
+                self.types_path = Path("../types.json")  # Look in DatabaseDemon folder
         else:  # Linux or other
             if not self.wad_path:
                 self.wad_path = Path("/mnt/c/ProgramData/KingsIsle Entertainment/Wizard101/Data/GameData/Root.wad")
             if not self.types_path:
-                self.types_path = Path("../../types.json")  # Look in DatabaseDemon folder
+                self.types_path = Path("../types.json")  # Look in DatabaseDemon folder
     
     def initialize(self) -> bool:
         """Initialize the processor by loading type list and opening WAD archive"""

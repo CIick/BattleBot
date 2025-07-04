@@ -1,0 +1,21 @@
+
+        "171021254": {
+            "name": "class TemplateManifest",
+            "bases": [
+                "PropertyClass"
+            ],
+            "hash": 171021254,
+            "properties": {
+                "m_serializedTemplates": {
+                    "type": "class TemplateLocation",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 7,
+                    "container": "Vector",
+                    "dynamic": true,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 1656531664
+                }
+            }
+        },

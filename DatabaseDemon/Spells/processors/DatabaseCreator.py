@@ -18,8 +18,10 @@ from .DatabaseSchema import DatabaseSchema
 from .WADProcessor import WADProcessor
 from .RevisionDetector import RevisionDetector
 import sys
-sys.path.append(str(Path(__file__).parent.parent))
-from ..dtos import FixedSpellDTOFactory
+sys.path.append(str(Path(__file__).parent.parent.parent))  # DatabaseDemon level
+sys.path.append(str(Path(__file__).parent.parent))         # Spells level
+
+from dtos import FixedSpellDTOFactory
 
 
 class DatabaseCreator:

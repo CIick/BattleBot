@@ -3,7 +3,10 @@
     "allow": [
       "Bash(rg:*)",
       "Bash(grep:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(ls:*)",
+      "Bash(python3:*)",
+      "Bash(sqlite3:*)"
     ],
     "deny": []
   }

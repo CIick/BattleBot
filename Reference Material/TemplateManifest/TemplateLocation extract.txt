@@ -1,0 +1,32 @@
+
+        "1128060484": {
+            "name": "class TemplateLocation",
+            "bases": [
+                "PropertyClass"
+            ],
+            "hash": 1128060484,
+            "properties": {
+                "m_filename": {
+                    "type": "std::string",
+                    "id": 0,
+                    "offset": 72,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 3117322428
+                },
+                "m_id": {
+                    "type": "unsigned int",
+                    "id": 1,
+                    "offset": 104,
+                    "flags": 7,
+                    "container": "Static",
+                    "dynamic": false,
+                    "singleton": false,
+                    "pointer": false,
+                    "hash": 2301988666
+                }
+            }
+        },

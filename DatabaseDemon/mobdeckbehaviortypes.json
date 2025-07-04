@@ -1,0 +1,40 @@
+{
+    "version": 2,
+    "classes": {
+        "1451865413": {
+            "bases": [
+            "class BehaviorTemplate"
+            ],
+            "name": "class MobDeckBehaviorTemplate",
+            "singleton": false,
+            "properties": {
+            "m_behaviorName": {
+                "type": "std::string",
+                "id": 0,
+                "offset": 36,
+                "flags": 7,
+                "container": "Static",
+                "dynamic": false,
+                "pointer": true,
+                "hash": 3130754092,
+                "enum_options": {}
+            },
+            "m_spellList": {
+                "type": "std::string",
+                "id": 1,
+                "offset": 72,
+                "flags": 268435463,
+                "container": "List",
+                "dynamic": true,
+                "pointer": true,
+                "hash": 2688422295,
+                "enum_options": {
+                "__BASECLASS": "SpellTemplate"
+                }
+            }
+            }
+        }
+    }
+}
+
+  
