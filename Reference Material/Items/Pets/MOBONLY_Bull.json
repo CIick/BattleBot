@@ -1,0 +1,319 @@
+{
+  "$__type": "class WizItemTemplate",
+  "m_adjectiveList": [
+    "MOBONLY_Bull.AdjRef",
+    "Pet",
+    "NotForPetTome",
+    "FLAG_NoAuction",
+    "FLAG_NoBargain",
+    "FLAG_NoGift",
+    "FLAG_NoDrop",
+    "FLAG_NoSell",
+    "FLAG_NoTrade"
+  ],
+  "m_arenaPointCost": 0,
+  "m_avatarFlags": [],
+  "m_avatarInfo": null,
+  "m_baseCost": 1.0,
+  "m_behaviors": [
+    {
+      "$__type": "class PetItemBehaviorTemplate",
+      "m_Levels": [
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 0,
+          "m_lootTable": [],
+          "m_powerCardCount": 0,
+          "m_powerCardName": "",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 0,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 1,
+          "m_lootTable": [],
+          "m_powerCardCount": 0,
+          "m_powerCardName": "",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 0,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 2,
+          "m_lootTable": [],
+          "m_powerCardCount": 0,
+          "m_powerCardName": "",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 0,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 3,
+          "m_lootTable": [],
+          "m_powerCardCount": 0,
+          "m_powerCardName": "",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 0,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 4,
+          "m_lootTable": [],
+          "m_powerCardCount": 0,
+          "m_powerCardName": "",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 0,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 5,
+          "m_lootTable": [],
+          "m_powerCardCount": 0,
+          "m_powerCardName": "",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 0,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 6,
+          "m_lootTable": [],
+          "m_powerCardCount": 0,
+          "m_powerCardName": "",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 0,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 7,
+          "m_lootTable": [],
+          "m_powerCardCount": 0,
+          "m_powerCardName": "",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 0,
+          "m_template": 2
+        }
+      ],
+      "m_animationEventList": [],
+      "m_behaviorName": "PetItemBehavior",
+      "m_conversionLevel": 0,
+      "m_conversionStats": [
+        {
+          "$__type": "class PetStat",
+          "m_name": "Will",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Agility",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Intellect",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Power",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Strength",
+          "m_statID": 0,
+          "m_value": 1
+        }
+      ],
+      "m_conversionTalents": [],
+      "m_conversionXP": 0,
+      "m_derbyTalents": [
+        "Talent-Boost-All01",
+        "Talent-Boost-All02",
+        "Talent-Boost-Behind01",
+        "Talent-Boost-Behind02",
+        "Talent-Boost-Front01",
+        "Talent-Boost-Front02",
+        "Talent-Boost-Leader01",
+        "Talent-Boost-Leader02",
+        "Talent-Boost-Leader03",
+        "Talent-Boost-Self01"
+      ],
+      "m_duckSound": "Sound/action_duck.wav",
+      "m_eGender": 2,
+      "m_eRace": 1993917801,
+      "m_eggColor": 10,
+      "m_eggName": "",
+      "m_excludeFromHatchOfTheDay": false,
+      "m_exclusivePet": false,
+      "m_fScale": 1.0,
+      "m_favoriteSnackCategories": [],
+      "m_flyingOffset": 0.0,
+      "m_guaranteedDerbyTalents": [],
+      "m_guaranteedTalents": [],
+      "m_hatchesAsID": 0,
+      "m_hatchmakingInitalCooldownTime": 0,
+      "m_hatchmakingMaximumHatches": 0,
+      "m_hideName": true,
+      "m_houseGuestOpacity": 1.0,
+      "m_jumpSound": "Sound/action_jump.wav",
+      "m_maxStats": [
+        {
+          "$__type": "class PetStat",
+          "m_name": "Will",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Agility",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Intellect",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Power",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Strength",
+          "m_statID": 0,
+          "m_value": 1
+        }
+      ],
+      "m_morphingExceptions": [],
+      "m_patternToTexture": [
+        {
+          "$__type": "class PetDyeToTexture",
+          "m_dye": 0,
+          "m_texture": 0
+        }
+      ],
+      "m_primaryDyeToTexture": [
+        {
+          "$__type": "class PetDyeToTexture",
+          "m_dye": 0,
+          "m_texture": 0
+        }
+      ],
+      "m_sHatchRate": "0s",
+      "m_secondaryDyeToTexture": [
+        {
+          "$__type": "class PetDyeToTexture",
+          "m_dye": 0,
+          "m_texture": 0
+        }
+      ],
+      "m_startStats": [
+        {
+          "$__type": "class PetStat",
+          "m_name": "Will",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Agility",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Intellect",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Power",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Strength",
+          "m_statID": 0,
+          "m_value": 1
+        }
+      ],
+      "m_talents": [
+        "Talent-Stat01-Agi01",
+        "Talent-Stat01-Agi02",
+        "Talent-Stat01-Agi03",
+        "Talent-Stat01-Agi04",
+        "Talent-Stat01-Int01",
+        "Talent-Stat01-Int02",
+        "Talent-Stat01-Int03",
+        "Talent-Stat01-Int04",
+        "Talent-Stat01-Pwr01",
+        "Talent-Stat01-Pwr02"
+      ],
+      "m_wowFactor": 0
+    },
+    {
+      "$__type": "class BehaviorTemplate",
+      "m_behaviorName": "PetNameBehavior"
+    },
+    {
+      "$__type": "class LeashBehaviorTemplate",
+      "m_alwaysDisplay": false,
+      "m_angle": 45.0,
+      "m_behaviorName": "LeashBehavior",
+      "m_despawnOnUnleash": false,
+      "m_leashType": 0,
+      "m_radius": 130.0
+    }
+  ],
+  "m_boyIconIndex": 3598,
+  "m_creditsCost": 0.0,
+  "m_description": "",
+  "m_displayName": "",
+  "m_equipEffects": [],
+  "m_equipRequirements": null,
+  "m_exemptFromAOI": false,
+  "m_girlIconIndex": 3598,
+  "m_holidayFlag": "",
+  "m_itemLimit": -1,
+  "m_itemSetBonusTemplateID": 0,
+  "m_leashOffsetOverride": null,
+  "m_nObjectType": 0,
+  "m_numPatterns": 0,
+  "m_numPrimaryColors": 0,
+  "m_numSecondaryColors": 0,
+  "m_objectName": "MOBONLY_Bull",
+  "m_purchaseRequirements": null,
+  "m_pvpCurrencyCost": 0,
+  "m_pvpTourneyCurrencyCost": 0,
+  "m_rank": 0,
+  "m_rarity": 0,
+  "m_sIcon": "",
+  "m_school": "Fire",
+  "m_templateID": 1392797,
+  "m_visualID": 0
+}

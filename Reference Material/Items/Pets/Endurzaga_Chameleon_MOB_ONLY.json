@@ -1,0 +1,679 @@
+{
+  "$__type": "class WizItemTemplate",
+  "m_adjectiveList": [
+    "Endurzaga_Chameleon_MOB_ONLY.AdjRef",
+    "Pet",
+    "FLAG_NoAuction",
+    "FLAG_NoBargain",
+    "FLAG_CrownsOnly"
+  ],
+  "m_arenaPointCost": 0,
+  "m_avatarFlags": [],
+  "m_avatarInfo": {
+    "$__type": "class WizAvatarItemInfo",
+    "m_defaultOption": null,
+    "m_defaultTextureOption": null,
+    "m_flags": [],
+    "m_options": [],
+    "m_partName": "",
+    "m_slotName": "",
+    "m_textureOptions": [
+      {
+        "$__type": "class AvatarTextureOption",
+        "m_conditionFlags": [
+          "FEMALE"
+        ],
+        "m_decals": [],
+        "m_decals2": [
+          "NONE"
+        ],
+        "m_materialName": "",
+        "m_textures": [
+          "Textures/Characters/Pets/Dragon/NPC_Pet_Dragon_012.dds"
+        ],
+        "m_tintColorNames": [],
+        "m_tintColors": [],
+        "m_useTintColor": false
+      },
+      {
+        "$__type": "class AvatarTextureOption",
+        "m_conditionFlags": [
+          "MALE"
+        ],
+        "m_decals": [],
+        "m_decals2": [
+          "NONE"
+        ],
+        "m_materialName": "",
+        "m_textures": [
+          "Textures/Characters/Pets/Dragon/NPC_Pet_Dragon_012.dds"
+        ],
+        "m_tintColorNames": [],
+        "m_tintColors": [],
+        "m_useTintColor": false
+      }
+    ]
+  },
+  "m_baseCost": 1000.0,
+  "m_behaviors": [
+    {
+      "$__type": "class BehaviorTemplate",
+      "m_behaviorName": "PetNameBehavior"
+    },
+    {
+      "$__type": "class FurnitureInfoBehaviorTemplate",
+      "m_behaviorName": "FurnitureInfoBehavior",
+      "m_bounce": true,
+      "m_cameraOffsetX": 0.0,
+      "m_cameraOffsetY": 0.0,
+      "m_cameraOffsetZ": 0.0,
+      "m_pitch": 0.0,
+      "m_roll": 0.0,
+      "m_rotate": true,
+      "m_textureFilename": "GUI/EquipmentIcons/Equipment_Complete_Color56.dds",
+      "m_textureIndex": 47,
+      "m_yaw": 0.0
+    },
+    {
+      "$__type": "class PetItemBehaviorTemplate",
+      "m_Levels": [
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 0,
+          "m_lootTable": [],
+          "m_powerCardCount": 0,
+          "m_powerCardName": "",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 0,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 1,
+          "m_lootTable": [],
+          "m_powerCardCount": 1,
+          "m_powerCardName": "Pet - Hydra - Amulet",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 125,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 2,
+          "m_lootTable": [],
+          "m_powerCardCount": 1,
+          "m_powerCardName": "Pet - Hydra - Amulet",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 250,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 3,
+          "m_lootTable": [],
+          "m_powerCardCount": 1,
+          "m_powerCardName": "Pet - Hydra - Amulet",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 525,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 4,
+          "m_lootTable": [
+            "PetLevel_Ancient_Common_01"
+          ],
+          "m_powerCardCount": 1,
+          "m_powerCardName": "Pet - Hydra - Amulet",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 1050,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 5,
+          "m_lootTable": [
+            "PetLevel_Epic_Balance_01"
+          ],
+          "m_powerCardCount": 1,
+          "m_powerCardName": "Pet - Hydra - Amulet",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 2125,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 6,
+          "m_lootTable": [
+            "PetLevel_Mega_Balance_01"
+          ],
+          "m_powerCardCount": 1,
+          "m_powerCardName": "Pet - Hydra - Amulet",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 2250,
+          "m_template": 2
+        },
+        {
+          "$__type": "class PetLevelInfo",
+          "m_level": 7,
+          "m_lootTable": [
+            "Ultra_Pet_01",
+            "PetLevel_Ultra_Balance_01"
+          ],
+          "m_powerCardCount": 1,
+          "m_powerCardName": "Pet - Hydra - Amulet",
+          "m_powerCardName2": "",
+          "m_powerCardName3": "",
+          "m_requiredXP": 0,
+          "m_template": 2
+        }
+      ],
+      "m_animationEventList": [],
+      "m_behaviorName": "PetItemBehavior",
+      "m_conversionLevel": 0,
+      "m_conversionStats": [
+        {
+          "$__type": "class PetStat",
+          "m_name": "Will",
+          "m_statID": 0,
+          "m_value": 15
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Agility",
+          "m_statID": 0,
+          "m_value": 15
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Intellect",
+          "m_statID": 0,
+          "m_value": 15
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Power",
+          "m_statID": 0,
+          "m_value": 15
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Strength",
+          "m_statID": 0,
+          "m_value": 15
+        }
+      ],
+      "m_conversionTalents": [],
+      "m_conversionXP": 0,
+      "m_derbyTalents": [
+        "Talent-ModAllStats-All02",
+        "Talent-ModRate-Self03",
+        "Talent-ModCheerCost03",
+        "Talent-ObBanana02",
+        "Talent-LaneChange-Leader01",
+        "Talent-RmvBuff-Leader01",
+        "Talent-ModRate-Leader01",
+        "Talent-ModMrl-Leader01",
+        "Talent-RmvDebuff-Self01",
+        "Talent-ObBanana01"
+      ],
+      "m_duckSound": "Sound/action_duck.wav",
+      "m_eGender": 2,
+      "m_eRace": 596131510,
+      "m_eggColor": 19,
+      "m_eggName": "EggNames_00000054",
+      "m_excludeFromHatchOfTheDay": false,
+      "m_exclusivePet": false,
+      "m_fScale": 1.0,
+      "m_favoriteSnackCategories": [
+        "Meal"
+      ],
+      "m_flyingOffset": 0.0,
+      "m_guaranteedDerbyTalents": [],
+      "m_guaranteedTalents": [
+        "Talent-Combat-Conviction-02",
+        "Talent-Spell-Reshuffle"
+      ],
+      "m_hatchesAsID": 0,
+      "m_hatchmakingInitalCooldownTime": 0,
+      "m_hatchmakingMaximumHatches": 0,
+      "m_hideName": true,
+      "m_houseGuestOpacity": 1.0,
+      "m_jumpSound": "Sound/action_jump.wav",
+      "m_maxStats": [
+        {
+          "$__type": "class PetStat",
+          "m_name": "Will",
+          "m_statID": 0,
+          "m_value": 165
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Agility",
+          "m_statID": 0,
+          "m_value": 185
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Intellect",
+          "m_statID": 0,
+          "m_value": 150
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Power",
+          "m_statID": 0,
+          "m_value": 190
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Strength",
+          "m_statID": 0,
+          "m_value": 185
+        }
+      ],
+      "m_morphingExceptions": [
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164256
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164257
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164258
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164259
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164634
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164635
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164636
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164637
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164638
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164639
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164640
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 164641
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 175419
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 175424
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 175425
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 346397
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 346390
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 346388
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 468196
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 468189
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 468187
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 653077
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 653082
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 733073,
+          "m_probability": 0.15000000596046448,
+          "m_secondPetTemplateID": 653084
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164256
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164257
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164258
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164259
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164634
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164635
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164636
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164637
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164638
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164639
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164640
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 164641
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 175419
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 175424
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 175425
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 346397
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 346390
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 346388
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 468196
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 468189
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 468187
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 653077
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 653082
+        },
+        {
+          "$__type": "class MorphingException",
+          "m_eggTemplateID": 473580,
+          "m_probability": 0.10000000149011612,
+          "m_secondPetTemplateID": 653084
+        }
+      ],
+      "m_patternToTexture": [
+        {
+          "$__type": "class PetDyeToTexture",
+          "m_dye": 0,
+          "m_texture": 0
+        }
+      ],
+      "m_primaryDyeToTexture": [
+        {
+          "$__type": "class PetDyeToTexture",
+          "m_dye": 0,
+          "m_texture": 1
+        }
+      ],
+      "m_sHatchRate": "0m",
+      "m_secondaryDyeToTexture": [
+        {
+          "$__type": "class PetDyeToTexture",
+          "m_dye": 0,
+          "m_texture": 0
+        }
+      ],
+      "m_startStats": [
+        {
+          "$__type": "class PetStat",
+          "m_name": "Will",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Agility",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Intellect",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Power",
+          "m_statID": 0,
+          "m_value": 1
+        },
+        {
+          "$__type": "class PetStat",
+          "m_name": "Strength",
+          "m_statID": 0,
+          "m_value": 1
+        }
+      ],
+      "m_talents": [
+        "Talent-Combat-Conviction-02",
+        "Talent-Spell-Reshuffle",
+        "Talent-Accuracy-All02",
+        "Talent-Pips",
+        "Talent-Stat01-Agi01",
+        "Talent-Stat01-Str01",
+        "Talent-Stat01-Int01",
+        "Talent-Stat01-Will01",
+        "Talent-Stat01-Pwr01",
+        "Talent-Health01"
+      ],
+      "m_wowFactor": 6
+    },
+    {
+      "$__type": "class JewelSocketBehaviorTemplate",
+      "m_behaviorName": "JewelSocketBehavior",
+      "m_jewelSockets": [
+        {
+          "$__type": "class JewelSocket",
+          "m_bLockable": false,
+          "m_socketType": 4
+        }
+      ],
+      "m_socketDeleted": false
+    }
+  ],
+  "m_boyIconIndex": 3567,
+  "m_creditsCost": 1000.0,
+  "m_description": "",
+  "m_displayName": "WizardPets_00000580",
+  "m_equipEffects": [],
+  "m_equipRequirements": null,
+  "m_exemptFromAOI": false,
+  "m_girlIconIndex": 3567,
+  "m_holidayFlag": "",
+  "m_itemLimit": -1,
+  "m_itemSetBonusTemplateID": 0,
+  "m_leashOffsetOverride": null,
+  "m_nObjectType": 0,
+  "m_numPatterns": 0,
+  "m_numPrimaryColors": 1,
+  "m_numSecondaryColors": 0,
+  "m_objectName": "Endurzaga_Chameleon_MOB_ONLY",
+  "m_purchaseRequirements": null,
+  "m_pvpCurrencyCost": 0,
+  "m_pvpTourneyCurrencyCost": 0,
+  "m_rank": 0,
+  "m_rarity": 3,
+  "m_sIcon": "",
+  "m_school": "Balance",
+  "m_templateID": 1406320,
+  "m_visualID": 0
+}

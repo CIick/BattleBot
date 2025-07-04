@@ -1,0 +1,136 @@
+{
+  "$__type": "class WizGameObjectTemplate",
+  "m_adjectiveList": [
+    "LM_Standin_BantamWolf_01.AdjRef",
+    "EditorOnly"
+  ],
+  "m_aggroSound": "",
+  "m_behaviors": [
+    {
+      "$__type": "class BehaviorTemplate",
+      "m_behaviorName": "BasicEquipmentBehavior"
+    },
+    {
+      "$__type": "class BehaviorTemplate",
+      "m_behaviorName": "BasicInventoryBehavior"
+    },
+    {
+      "$__type": "class BehaviorTemplate",
+      "m_behaviorName": "BasicEffectsBehavior"
+    },
+    {
+      "$__type": "class BehaviorTemplate",
+      "m_behaviorName": "BasicMobileBehavior"
+    },
+    {
+      "$__type": "class NPCBehaviorTemplate",
+      "m_baseEffects": [],
+      "m_behaviorName": "NPCBehavior",
+      "m_bossMob": false,
+      "m_cylinderScaleValue": 1.0,
+      "m_fIntelligence": 0.5,
+      "m_fSelfishFactor": 0.800000011920929,
+      "m_maxShadowPips": 0,
+      "m_mobTitle": 0,
+      "m_nAggressiveFactor": 8,
+      "m_nLevel": 1,
+      "m_nStartingHealth": 500,
+      "m_nameColor": "(r=0, g=255, b=0, a=255)",
+      "m_schoolOfFocus": "",
+      "m_secondarySchoolOfFocus": "",
+      "m_triggerList": "",
+      "m_turnTowardsPlayer": false
+    },
+    {
+      "$__type": "class AnimationBehaviorTemplate",
+      "m_animationAssetName": "|Mob2|WorldData|Character/Pets/PP_FenrisWolf/PP_FenrisWolf.kfm",
+      "m_animationEventList": [],
+      "m_assetName": "|Mob2|WorldData|Character/Pets/PP_FenrisWolf/PP_FenrisWolf_Bantam_NPC.nif",
+      "m_bCastsShadow": true,
+      "m_bFadesIn": true,
+      "m_bFadesOut": true,
+      "m_bPortalExcluded": false,
+      "m_bStaticObject": false,
+      "m_behaviorName": "AnimationBehavior",
+      "m_dataLookupAssetName": "AnimationData/MasterAnimationList.xml",
+      "m_height": 0.0,
+      "m_idleAnimationName": "",
+      "m_movementScale": 1.0,
+      "m_nLightType": 1,
+      "m_opacity": 1.0,
+      "m_proxyName": "",
+      "m_scale": 1.0,
+      "m_skeletonID": 0
+    },
+    null,
+    {
+      "$__type": "class FidgetBehaviorTemplate",
+      "m_behaviorName": "FidgetBehavior",
+      "m_fidgetStateInfo": [
+        {
+          "$__type": "class FidgetStateInfo",
+          "m_fidgetName": "IdleFidget",
+          "m_fidgetSound": "",
+          "m_fidgetsPerMinute": 6.0,
+          "m_idleName": "Idle"
+        }
+      ]
+    },
+    {
+      "$__type": "class ObjectStateBehaviorTemplate",
+      "m_behaviorName": "BasicObjectStateBehavior",
+      "m_stateSetName": "NPCMobileStates"
+    },
+    {
+      "$__type": "class CollisionBehaviorTemplate",
+      "m_bAutoClickBox": true,
+      "m_bClientOnly": false,
+      "m_bDisableCollision": false,
+      "m_behaviorName": "CollisionBehavior",
+      "m_solidCollisionFilename": "",
+      "m_walkableCollisionFilename": ""
+    },
+    {
+      "$__type": "class BehaviorTemplate",
+      "m_behaviorName": "DeletedBehavior"
+    },
+    {
+      "$__type": "class BehaviorTemplate",
+      "m_behaviorName": "WizardSelectBehavior"
+    },
+    {
+      "$__type": "class PathBehaviorTemplate",
+      "m_actionList": [],
+      "m_behaviorName": "PathBehavior",
+      "m_kPathType": 0,
+      "m_nPathDirection": 1,
+      "m_pathID": 0,
+      "m_pauseChance": 0,
+      "m_timeToPause": 1.0
+    },
+    {
+      "$__type": "class BehaviorTemplate",
+      "m_behaviorName": "DeletedBehavior"
+    },
+    {
+      "$__type": "class BehaviorTemplate",
+      "m_behaviorName": "DeletedBehavior"
+    }
+  ],
+  "m_castSound": "",
+  "m_deathParticles": "",
+  "m_deathSound": "",
+  "m_description": "",
+  "m_displayName": "NPCs_01749170",
+  "m_exemptFromAOI": false,
+  "m_hitSound": "",
+  "m_leashOffsetOverride": null,
+  "m_locationPreference": "",
+  "m_lootTable": [],
+  "m_nObjectType": 0,
+  "m_objectName": "LM_Standin_BantamWolf_01",
+  "m_primarySchoolName": "",
+  "m_sIcon": "",
+  "m_templateID": 1487483,
+  "m_visualID": 0
+}
