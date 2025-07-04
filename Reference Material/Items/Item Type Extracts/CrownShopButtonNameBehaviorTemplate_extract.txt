@@ -1,0 +1,38 @@
+Class Definition Extract: CrownShopButtonNameBehaviorTemplate
+=============================================================
+Extracted: 2025-07-04 18:11:19.738840
+Source: types.json
+Hash: 935976055
+
+{
+    "name": "class CrownShopButtonNameBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 935976055,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_buttonDisplayName": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 8388615,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1916274798
+        }
+    }
+}

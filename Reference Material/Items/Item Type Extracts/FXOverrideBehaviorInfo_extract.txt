@@ -1,0 +1,81 @@
+Class Definition Extract: FXOverrideBehaviorInfo
+================================================
+Extracted: 2025-07-04 18:11:19.795125
+Source: types.json
+Hash: 838522035
+
+{
+    "name": "class FXOverrideBehaviorInfo",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 838522035,
+    "properties": {
+        "m_fxToReplace": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 112,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2301964408
+        },
+        "m_fxReplaceWith": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 144,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2445657937
+        },
+        "m_fxCastToReplace": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 176,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2287885731
+        },
+        "m_fxCastReplaceWith": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 208,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2146364220
+        },
+        "m_fxFidgetToReplace": {
+            "type": "std::string",
+            "id": 4,
+            "offset": 240,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3444964235
+        },
+        "m_fxFidgetReplaceWith": {
+            "type": "std::string",
+            "id": 5,
+            "offset": 272,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1631953700
+        }
+    }
+}

@@ -1,0 +1,59 @@
+Class Definition Extract: UserAnimationEvent
+============================================
+Extracted: 2025-07-04 18:11:19.656242
+Source: types.json
+Hash: 1099838971
+
+{
+    "name": "class UserAnimationEvent",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 1099838971,
+    "properties": {
+        "m_animationName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3393414044
+        },
+        "m_time": {
+            "type": "float",
+            "id": 1,
+            "offset": 104,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 310085638
+        },
+        "m_actionType": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 112,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3328872763
+        },
+        "m_surfaceType": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 144,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2553995974
+        }
+    }
+}

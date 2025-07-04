@@ -1,0 +1,47 @@
+Class Definition Extract: JewelSocket
+=====================================
+Extracted: 2025-07-04 18:11:19.526696
+Source: types.json
+Hash: 1844855459
+
+{
+    "name": "class JewelSocket",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 1844855459,
+    "properties": {
+        "m_socketType": {
+            "type": "enum JewelSocket::JewelSocketType",
+            "id": 0,
+            "offset": 72,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3989417709,
+            "enum_options": {
+                "SOCKETTYPE_SQUARE": 0,
+                "SOCKETTYPE_CIRCLE": 1,
+                "SOCKETTYPE_TRIANGLE": 2,
+                "SOCKETTYPE_TEAR": 3,
+                "SOCKETTYPE_PET": 4,
+                "SOCKETTYPE_PINSQUAREPIP": 5,
+                "SOCKETTYPE_PINSQUARESHIELD": 6,
+                "SOCKETTYPE_PINSQUARESWORD": 7
+            }
+        },
+        "m_bLockable": {
+            "type": "bool",
+            "id": 1,
+            "offset": 76,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1046128242
+        }
+    }
+}

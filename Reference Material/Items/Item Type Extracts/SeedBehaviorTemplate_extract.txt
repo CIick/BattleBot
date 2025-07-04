@@ -1,0 +1,562 @@
+Class Definition Extract: SeedBehaviorTemplate
+==============================================
+Extracted: 2025-07-04 18:11:19.648223
+Source: types.json
+Hash: 888229093
+
+{
+    "name": "class SeedBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 888229093,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_initialRandom": {
+            "type": "bool",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1171693694,
+            "enum_options": {
+                "__DEFAULT": 1
+            }
+        },
+        "m_turnRandom": {
+            "type": "bool",
+            "id": 2,
+            "offset": 121,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1320199517,
+            "enum_options": {
+                "__DEFAULT": 1
+            }
+        },
+        "m_trackPlayer": {
+            "type": "bool",
+            "id": 3,
+            "offset": 122,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 222941845,
+            "enum_options": {
+                "__DEFAULT": 1
+            }
+        },
+        "m_shy": {
+            "type": "bool",
+            "id": 4,
+            "offset": 123,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 269530055
+        },
+        "m_speed": {
+            "type": "float",
+            "id": 5,
+            "offset": 124,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 900164744,
+            "enum_options": {
+                "__DEFAULT": "400.0"
+            }
+        },
+        "m_nextStageTemplateID": {
+            "type": "unsigned int",
+            "id": 6,
+            "offset": 128,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 953331817
+        },
+        "m_nextStageRate": {
+            "type": "std::string",
+            "id": 7,
+            "offset": 136,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2891393594
+        },
+        "m_needsWaterMinRate": {
+            "type": "std::string",
+            "id": 8,
+            "offset": 168,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2764655453
+        },
+        "m_needsSunMinRate": {
+            "type": "std::string",
+            "id": 9,
+            "offset": 232,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1962535184
+        },
+        "m_needsPollinationMinRate": {
+            "type": "std::string",
+            "id": 10,
+            "offset": 296,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1849944227
+        },
+        "m_needsWaterMaxRate": {
+            "type": "std::string",
+            "id": 11,
+            "offset": 200,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2463431519
+        },
+        "m_needsSunMaxRate": {
+            "type": "std::string",
+            "id": 12,
+            "offset": 264,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1661311250
+        },
+        "m_needsPollinationMaxRate": {
+            "type": "std::string",
+            "id": 13,
+            "offset": 328,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1548720293
+        },
+        "m_needsMagicMinRate": {
+            "type": "std::string",
+            "id": 14,
+            "offset": 360,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2161414587
+        },
+        "m_needsMagicMaxRate": {
+            "type": "std::string",
+            "id": 15,
+            "offset": 392,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1860190653
+        },
+        "m_needsMusicMinRate": {
+            "type": "std::string",
+            "id": 16,
+            "offset": 424,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2626783323
+        },
+        "m_needsMusicMaxRate": {
+            "type": "std::string",
+            "id": 17,
+            "offset": 456,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2325559389
+        },
+        "m_plantStage": {
+            "type": "enum PlantStage",
+            "id": 18,
+            "offset": 488,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2664847960,
+            "enum_options": {
+                "PS_Seedling": 0,
+                "PS_Young": 1,
+                "PS_Mature": 2,
+                "PS_Angel": 3,
+                "PS_Wilting": 4,
+                "PS_Dead": 5
+            }
+        },
+        "m_wiltTemplateID": {
+            "type": "unsigned int",
+            "id": 19,
+            "offset": 492,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1395185014
+        },
+        "m_deadTemplateID": {
+            "type": "unsigned int",
+            "id": 20,
+            "offset": 496,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1067979076
+        },
+        "m_youngTemplateID": {
+            "type": "unsigned int",
+            "id": 21,
+            "offset": 500,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2019241800
+        },
+        "m_needsWaterWiltRate": {
+            "type": "std::string",
+            "id": 22,
+            "offset": 512,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3446381113
+        },
+        "m_needsSunWiltRate": {
+            "type": "std::string",
+            "id": 23,
+            "offset": 544,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2746216012
+        },
+        "m_needsPollinationWiltRate": {
+            "type": "std::string",
+            "id": 24,
+            "offset": 576,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3325681727
+        },
+        "m_needsMagicWiltRate": {
+            "type": "std::string",
+            "id": 25,
+            "offset": 608,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2866785367
+        },
+        "m_needsMusicWiltRate": {
+            "type": "std::string",
+            "id": 26,
+            "offset": 640,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3191568119
+        },
+        "m_harvestMinRate": {
+            "type": "std::string",
+            "id": 27,
+            "offset": 672,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1769440136
+        },
+        "m_harvestMaxRate": {
+            "type": "std::string",
+            "id": 28,
+            "offset": 704,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3615699850
+        },
+        "m_pestList": {
+            "type": "class PestEntry",
+            "id": 29,
+            "offset": 736,
+            "flags": 7,
+            "container": "Vector",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3674788815
+        },
+        "m_pestUpdateRate": {
+            "type": "std::string",
+            "id": 30,
+            "offset": 760,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1636194246
+        },
+        "m_requiresEnchantedSoil": {
+            "type": "bool",
+            "id": 31,
+            "offset": 792,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1443901316
+        },
+        "m_rewardsRating": {
+            "type": "int",
+            "id": 32,
+            "offset": 796,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1304655351
+        },
+        "m_challengeRating": {
+            "type": "int",
+            "id": 33,
+            "offset": 800,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 310016034
+        },
+        "m_harvestXP": {
+            "type": "int",
+            "id": 34,
+            "offset": 804,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1835284159
+        },
+        "m_requiresEnrichedSoil": {
+            "type": "bool",
+            "id": 35,
+            "offset": 793,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 69513596
+        },
+        "m_fidgetDuringHappy": {
+            "type": "bool",
+            "id": 36,
+            "offset": 808,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 302222161
+        },
+        "m_fidgetSoundEffectName": {
+            "type": "std::string",
+            "id": 37,
+            "offset": 816,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2949012741
+        },
+        "m_fidgetSoundEffectGain": {
+            "type": "float",
+            "id": 38,
+            "offset": 848,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1541262591,
+            "enum_options": {
+                "__DEFAULT": "1.0"
+            }
+        },
+        "m_angelEffectTemplateID": {
+            "type": "unsigned int",
+            "id": 39,
+            "offset": 852,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 907020010
+        },
+        "m_seedSize": {
+            "type": "enum SeedSize",
+            "id": 40,
+            "offset": 856,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1971854021,
+            "enum_options": {
+                "SS_Small": 0,
+                "SS_Medium": 1,
+                "SS_Large": 2,
+                "__DEFAULT": "SS_Medium"
+            }
+        },
+        "m_seedLimit": {
+            "type": "int",
+            "id": 41,
+            "offset": 860,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 189298778
+        },
+        "m_gardeningLevelRequirement": {
+            "type": "int",
+            "id": 42,
+            "offset": 864,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 52309522
+        },
+        "m_maximumNumberOfHarvests": {
+            "type": "unsigned int",
+            "id": 43,
+            "offset": 896,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1889816953
+        },
+        "m_likesDislikesList": {
+            "type": "class LikesDislikesEntry",
+            "id": 44,
+            "offset": 872,
+            "flags": 7,
+            "container": "Vector",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2284921934
+        },
+        "m_matureTemplateID": {
+            "type": "unsigned int",
+            "id": 45,
+            "offset": 504,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1960067908
+        },
+        "m_plantRank": {
+            "type": "int",
+            "id": 46,
+            "offset": 900,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 164732869
+        }
+    }
+}

@@ -1,0 +1,137 @@
+Class Definition Extract: FurnitureInfoBehaviorTemplate
+=======================================================
+Extracted: 2025-07-04 18:11:19.540451
+Source: types.json
+Hash: 361088321
+
+{
+    "name": "class FurnitureInfoBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 361088321,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_yaw": {
+            "type": "float",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 357256328
+        },
+        "m_pitch": {
+            "type": "float",
+            "id": 2,
+            "offset": 124,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 896371695
+        },
+        "m_roll": {
+            "type": "float",
+            "id": 3,
+            "offset": 128,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 310020272
+        },
+        "m_rotate": {
+            "type": "bool",
+            "id": 4,
+            "offset": 132,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 918859426
+        },
+        "m_bounce": {
+            "type": "bool",
+            "id": 5,
+            "offset": 133,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 292742671
+        },
+        "m_textureIndex": {
+            "type": "int",
+            "id": 6,
+            "offset": 136,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1723520995
+        },
+        "m_textureFilename": {
+            "type": "std::string",
+            "id": 7,
+            "offset": 144,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2208648365
+        },
+        "m_cameraOffsetX": {
+            "type": "float",
+            "id": 8,
+            "offset": 176,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1515912895
+        },
+        "m_cameraOffsetY": {
+            "type": "float",
+            "id": 9,
+            "offset": 180,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1515912896
+        },
+        "m_cameraOffsetZ": {
+            "type": "float",
+            "id": 10,
+            "offset": 184,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1515912897
+        }
+    }
+}

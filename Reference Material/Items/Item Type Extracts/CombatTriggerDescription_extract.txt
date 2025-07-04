@@ -1,0 +1,40 @@
+Class Definition Extract: CombatTriggerDescription
+==================================================
+Extracted: 2025-07-04 18:11:19.783365
+Source: types.json
+Hash: 1511448627
+
+{
+    "name": "class CombatTriggerDescription",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 1511448627,
+    "properties": {
+        "m_description": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 8388615,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1649374815
+        },
+        "m_displaySpellName": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 104,
+            "flags": 268435463,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3323484466,
+            "enum_options": {
+                "__BASECLASS": "SpellTemplate"
+            }
+        }
+    }
+}

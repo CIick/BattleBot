@@ -1,0 +1,77 @@
+Class Definition Extract: ReqHighestCharacterLevelOnAccount
+===========================================================
+Extracted: 2025-07-04 18:11:19.918961
+Source: types.json
+Hash: 412030678
+
+{
+    "name": "class ReqHighestCharacterLevelOnAccount",
+    "bases": [
+        "ReqNumeric",
+        "Requirement",
+        "PropertyClass"
+    ],
+    "hash": 412030678,
+    "properties": {
+        "m_applyNOT": {
+            "type": "bool",
+            "id": 0,
+            "offset": 72,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1746328074,
+            "enum_options": {
+                "__DEFAULT": 0
+            }
+        },
+        "m_operator": {
+            "type": "enum Requirement::Operator",
+            "id": 1,
+            "offset": 76,
+            "flags": 2097183,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2672792317,
+            "enum_options": {
+                "ROP_AND": 0,
+                "ROP_OR": 1,
+                "__DEFAULT": "ROP_AND"
+            }
+        },
+        "m_numericValue": {
+            "type": "float",
+            "id": 2,
+            "offset": 80,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 521915239
+        },
+        "m_operatorType": {
+            "type": "enum ReqNumeric::OPERATOR_TYPE",
+            "id": 3,
+            "offset": 84,
+            "flags": 2097183,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2228122961,
+            "enum_options": {
+                "OPERATOR_UNKNOWN": 4294967295,
+                "OPERATOR_EQUALS": 0,
+                "OPERATOR_GREATER_THAN": 1,
+                "OPERATOR_LESS_THAN": 2,
+                "OPERATOR_GREATER_THAN_EQ": 3,
+                "OPERATOR_LESS_THAN_EQ": 4
+            }
+        }
+    }
+}

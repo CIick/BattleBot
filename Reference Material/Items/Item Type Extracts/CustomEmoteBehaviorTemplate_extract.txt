@@ -1,0 +1,131 @@
+Class Definition Extract: CustomEmoteBehaviorTemplate
+=====================================================
+Extracted: 2025-07-04 18:11:19.710397
+Source: types.json
+Hash: 1038212901
+
+{
+    "name": "class CustomEmoteBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1038212901,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_animation1": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3030904012
+        },
+        "m_animation2": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 152,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3030904013
+        },
+        "m_sound1": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 184,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2453262773
+        },
+        "m_sound2": {
+            "type": "std::string",
+            "id": 4,
+            "offset": 216,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2453262774
+        },
+        "m_emoteText": {
+            "type": "std::string",
+            "id": 5,
+            "offset": 248,
+            "flags": 8388615,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2426384538
+        },
+        "m_emoteType": {
+            "type": "enum CustomEmoteType",
+            "id": 6,
+            "offset": 280,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1172696222,
+            "enum_options": {
+                "CE_Emote": 0,
+                "CE_Teleport": 1,
+                "CE_Dance": 2
+            }
+        },
+        "m_isMemberEmote": {
+            "type": "bool",
+            "id": 7,
+            "offset": 284,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1406867457
+        },
+        "m_isDefaultEmote": {
+            "type": "bool",
+            "id": 8,
+            "offset": 285,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1645218254
+        },
+        "m_bitFieldNumber": {
+            "type": "int",
+            "id": 9,
+            "offset": 288,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 59324198
+        }
+    }
+}

@@ -359,6 +359,11 @@ class ItemTypeDiscoverer:
             self._generate_location_analysis_report()
             self._generate_dto_development_roadmap()
             
+            # Generate class extraction utilities
+            self._generate_class_extraction_list()
+            self._generate_extraction_commands()
+            self._generate_extraction_status()
+            
             print(f"[OK] All reports generated successfully in {self.reports_dir}")
             return True
         
@@ -593,6 +598,118 @@ class ItemTypeDiscoverer:
             f.write(f"\nTOTAL TYPES TO IMPLEMENT: {len(self.nested_types_found)}\n")
             f.write(f"ESTIMATED DEVELOPMENT TIME: {len(self.nested_types_found) // 5} - {len(self.nested_types_found) // 3} days\n")
             f.write("(Based on 3-5 DTOs per day development rate)\n")
+    
+    def _generate_class_extraction_list(self):
+        """Generate simple list file for class extractor"""
+        report_path = self.reports_dir / "class_extraction_list.txt"
+        
+        # Sort types by frequency (most common first)
+        sorted_types = sorted(self.nested_types_found, 
+                            key=lambda x: self.nested_type_counts[x], reverse=True)
+        
+        with open(report_path, 'w', encoding='utf-8') as f:
+            f.write("# Class Extraction List for Items\n")
+            f.write("# Generated for use with class_definition_extractor.py\n")
+            f.write(f"# Generated: {datetime.now()}\n")
+            f.write(f"# Total Classes: {len(sorted_types)}\n")
+            f.write("#\n")
+            f.write("# Usage:\n")
+            f.write("#   python ../../utils/class_definition_extractor.py --from-list class_extraction_list.txt\n")
+            f.write("#\n\n")
+            
+            for type_name in sorted_types:
+                count = self.nested_type_counts[type_name]
+                f.write(f"{type_name}  # {count:,} uses\n")
+        
+        print(f"[OK] Generated class extraction list: {report_path}")
+    
+    def _generate_extraction_commands(self):
+        """Generate ready-to-run extraction commands"""
+        report_path = self.reports_dir / "extraction_commands.txt"
+        
+        with open(report_path, 'w', encoding='utf-8') as f:
+            f.write("Class Definition Extraction Commands\n")
+            f.write("=" * 40 + "\n\n")
+            f.write(f"Generated: {datetime.now()}\n")
+            f.write(f"Classes to extract: {len(self.nested_types_found)}\n\n")
+            
+            f.write("BATCH EXTRACTION (Recommended)\n")
+            f.write("-" * 30 + "\n")
+            f.write("# Extract all discovered classes at once:\n")
+            f.write(f"cd {Path(__file__).parent.parent.parent / 'utils'}\n")
+            f.write(f"python class_definition_extractor.py --from-list \"../Reports/Item Reports/class_extraction_list.txt\"\n\n")
+            
+            f.write("ALTERNATIVE: Extract from analysis report\n")
+            f.write("-" * 40 + "\n")
+            f.write("# Extract directly from nested types analysis:\n")
+            f.write(f"python class_definition_extractor.py --from-report \"../Reports/Item Reports/nested_types_analysis.txt\"\n\n")
+            
+            f.write("INDIVIDUAL EXTRACTION COMMANDS\n")
+            f.write("-" * 30 + "\n")
+            f.write("# If you need to extract specific classes individually:\n\n")
+            
+            # Sort by frequency and show top 20 individual commands
+            sorted_types = sorted(self.nested_types_found, 
+                                key=lambda x: self.nested_type_counts[x], reverse=True)
+            
+            for type_name in sorted_types[:20]:
+                count = self.nested_type_counts[type_name]
+                f.write(f"python class_definition_extractor.py --class \"{type_name}\"  # {count:,} uses\n")
+            
+            if len(sorted_types) > 20:
+                f.write(f"# ... and {len(sorted_types) - 20} more classes\n")
+        
+        print(f"[OK] Generated extraction commands: {report_path}")
+    
+    def _generate_extraction_status(self):
+        """Generate extraction status tracking file"""
+        report_path = self.reports_dir / "extraction_status.txt"
+        
+        # Sort types by frequency
+        sorted_types = sorted(self.nested_types_found, 
+                            key=lambda x: self.nested_type_counts[x], reverse=True)
+        
+        with open(report_path, 'w', encoding='utf-8') as f:
+            f.write("Class Definition Extraction Status\n")
+            f.write("=" * 35 + "\n\n")
+            f.write(f"Generated: {datetime.now()}\n")
+            f.write(f"Total Classes to Extract: {len(sorted_types)}\n\n")
+            f.write("STATUS TRACKING\n")
+            f.write("-" * 15 + "\n")
+            f.write("Update this file as you extract classes:\n")
+            f.write("  [ ] = Not extracted\n")
+            f.write("  [X] = Extracted\n")
+            f.write("  [E] = Error during extraction\n\n")
+            
+            # Group by priority/frequency
+            high_priority = [t for t in sorted_types if self.nested_type_counts[t] >= 100]
+            medium_priority = [t for t in sorted_types if 10 <= self.nested_type_counts[t] < 100]
+            low_priority = [t for t in sorted_types if self.nested_type_counts[t] < 10]
+            
+            if high_priority:
+                f.write("HIGH PRIORITY (≥100 uses)\n")
+                f.write("-" * 25 + "\n")
+                for type_name in high_priority:
+                    count = self.nested_type_counts[type_name]
+                    f.write(f"[ ] {type_name} ({count:,} uses)\n")
+                f.write("\n")
+            
+            if medium_priority:
+                f.write("MEDIUM PRIORITY (10-99 uses)\n")
+                f.write("-" * 30 + "\n")
+                for type_name in medium_priority:
+                    count = self.nested_type_counts[type_name]
+                    f.write(f"[ ] {type_name} ({count:,} uses)\n")
+                f.write("\n")
+            
+            if low_priority:
+                f.write("LOW PRIORITY (<10 uses)\n")
+                f.write("-" * 25 + "\n")
+                for type_name in low_priority:
+                    count = self.nested_type_counts[type_name]
+                    f.write(f"[ ] {type_name} ({count:,} uses)\n")
+        
+        print(f"[OK] Generated extraction status tracker: {report_path}")
     
     def get_discovery_statistics(self) -> Dict[str, Any]:
         """Get comprehensive discovery statistics"""

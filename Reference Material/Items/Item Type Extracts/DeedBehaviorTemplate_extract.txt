@@ -1,0 +1,110 @@
+Class Definition Extract: DeedBehaviorTemplate
+==============================================
+Extracted: 2025-07-04 18:11:19.717191
+Source: types.json
+Hash: 185512734
+
+{
+    "name": "class DeedBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 185512734,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_lotWorldZone": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 268435463,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3026711022,
+            "enum_options": {
+                "__BASECLASS": "ZoneData"
+            }
+        },
+        "m_itemLimit": {
+            "type": "int",
+            "id": 2,
+            "offset": 152,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1799746856
+        },
+        "m_structureTemplateID": {
+            "type": "unsigned int",
+            "id": 3,
+            "offset": 156,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1037379271
+        },
+        "m_previewWorldZone": {
+            "type": "std::string",
+            "id": 4,
+            "offset": 160,
+            "flags": 268435463,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2100214145,
+            "enum_options": {
+                "__BASECLASS": "ZoneData"
+            }
+        },
+        "m_initialItemLayoutFile": {
+            "type": "std::string",
+            "id": 5,
+            "offset": 192,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1741580370
+        },
+        "m_alternateDeedTemplateID": {
+            "type": "unsigned int",
+            "id": 6,
+            "offset": 224,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 264986664
+        },
+        "m_castleBlockLimit": {
+            "type": "int",
+            "id": 7,
+            "offset": 228,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 276037600
+        }
+    }
+}

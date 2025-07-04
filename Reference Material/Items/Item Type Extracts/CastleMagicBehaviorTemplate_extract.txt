@@ -1,0 +1,88 @@
+Class Definition Extract: CastleMagicBehaviorTemplate
+=====================================================
+Extracted: 2025-07-04 18:11:19.825890
+Source: types.json
+Hash: 1175767651
+
+{
+    "name": "class CastleMagicBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1175767651,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_castleMagicItemType": {
+            "type": "enum CastleMagicItemType",
+            "id": 1,
+            "offset": 120,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3772531839,
+            "enum_options": {
+                "CM_Lever": 0,
+                "CM_PlayerDetector": 1,
+                "CM_PressurePlate": 2,
+                "CM_StartDetector": 3,
+                "CM_Brazier": 4,
+                "CM_TextDetector": 5,
+                "CM_JumpDetector": 6,
+                "CM_MagicReflector": 7,
+                "CM_Timer": 8,
+                "CM_RandomReflector": 9,
+                "CM_MagicButton": 10,
+                "CM_Computer": 11,
+                "CM_FireOrbCreator": 12,
+                "CM_IceOrbCreator": 13,
+                "CM_StormOrbCreator": 14,
+                "CM_FireOrbDetector": 15,
+                "CM_IceOrbDetector": 16,
+                "CM_StormOrbDetector": 17,
+                "CM_Help": 18,
+                "CM_RoomDetector": 19,
+                "CM_Counter": 20,
+                "CM_ItemDetector": 21,
+                "CM_AnyItemPlayerDetector": 22,
+                "CM_SequenceReflector": 23,
+                "CM_FastTimer": 24,
+                "CM_CantripDetector": 25
+            }
+        },
+        "m_numberOfActions": {
+            "type": "int",
+            "id": 2,
+            "offset": 124,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1161288009
+        },
+        "m_actionStringKeys": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 128,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2973138892
+        }
+    }
+}

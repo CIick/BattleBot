@@ -1,0 +1,104 @@
+Class Definition Extract: HousingSignBehaviorTemplate
+=====================================================
+Extracted: 2025-07-04 18:11:19.880488
+Source: types.json
+Hash: 596467571
+
+{
+    "name": "class HousingSignBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 596467571,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_materialName": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1878140043
+        },
+        "m_red": {
+            "type": "float",
+            "id": 2,
+            "offset": 152,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 357248818
+        },
+        "m_green": {
+            "type": "float",
+            "id": 3,
+            "offset": 156,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 886005576
+        },
+        "m_blue": {
+            "type": "float",
+            "id": 4,
+            "offset": 160,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 309442303
+        },
+        "m_hasShadow": {
+            "type": "bool",
+            "id": 5,
+            "offset": 164,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1762388821
+        },
+        "m_animate": {
+            "type": "bool",
+            "id": 6,
+            "offset": 165,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1790956978
+        },
+        "m_defaultSignText": {
+            "type": "std::string",
+            "id": 7,
+            "offset": 168,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3351101718
+        }
+    }
+}

@@ -1,0 +1,38 @@
+Class Definition Extract: ItemDynamicBehaviorTemplate
+=====================================================
+Extracted: 2025-07-04 18:11:19.721801
+Source: types.json
+Hash: 105382321
+
+{
+    "name": "class ItemDynamicBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 105382321,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_behaviorList": {
+            "type": "class BehaviorTemplate*",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Vector",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": true,
+            "hash": 1993233019
+        }
+    }
+}

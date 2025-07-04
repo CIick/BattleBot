@@ -1,0 +1,38 @@
+Class Definition Extract: PetGameBehaviorTemplate
+=================================================
+Extracted: 2025-07-04 18:11:19.861700
+Source: types.json
+Hash: 241581292
+
+{
+    "name": "class PetGameBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 241581292,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_gameName": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3229752342
+        }
+    }
+}

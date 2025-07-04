@@ -1,0 +1,65 @@
+Class Definition Extract: RentalBehaviorTemplate
+================================================
+Extracted: 2025-07-04 18:11:19.634859
+Source: types.json
+Hash: 638471713
+
+{
+    "name": "class RentalBehaviorTemplate",
+    "bases": [
+        "TimedItemBehaviorTemplate",
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 638471713,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_expireTime": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 128,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3122602039
+        },
+        "m_timerType": {
+            "type": "enum TimerType",
+            "id": 2,
+            "offset": 120,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 571744132,
+            "enum_options": {
+                "TimerType_Game": 0,
+                "TimerType_Calendar": 1
+            }
+        },
+        "m_typeList": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 160,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2119049625
+        }
+    }
+}

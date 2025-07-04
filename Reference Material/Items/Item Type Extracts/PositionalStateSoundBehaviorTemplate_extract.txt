@@ -1,0 +1,244 @@
+Class Definition Extract: PositionalStateSoundBehaviorTemplate
+==============================================================
+Extracted: 2025-07-04 18:11:19.944287
+Source: types.json
+Hash: 348708862
+
+{
+    "name": "class PositionalStateSoundBehaviorTemplate",
+    "bases": [
+        "PositionalSoundBehaviorTemplate",
+        "SoundBehaviorTemplate",
+        "AreaBehaviorTemplate",
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 348708862,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_radius": {
+            "type": "float",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 989410271
+        },
+        "m_category": {
+            "type": "enum AudioCategory",
+            "id": 2,
+            "offset": 124,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2951251982,
+            "enum_options": {
+                "AudioCategory_Irrelevent": 0,
+                "AudioCategory_Accoustic": 1,
+                "AudioCategory_Noise": 2,
+                "AudioCategory_Music": 3,
+                "AudioCategory_MusicAtSFXVolume": 4,
+                "AudioCategory_Dialog": 5,
+                "AudioCategory_UI": 6,
+                "AudioCategory_NoiseAtMusicVolume": 7
+            }
+        },
+        "m_exclusive": {
+            "type": "bool",
+            "id": 3,
+            "offset": 128,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 824383403
+        },
+        "m_active": {
+            "type": "bool",
+            "id": 4,
+            "offset": 129,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 239335471
+        },
+        "m_enableReqs": {
+            "type": "class SharedPointer<class RequirementList>",
+            "id": 5,
+            "offset": 136,
+            "flags": 263,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 3158020443
+        },
+        "m_trackFilenameList": {
+            "type": "std::string",
+            "id": 6,
+            "offset": 152,
+            "flags": 7,
+            "container": "Vector",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2531081709
+        },
+        "m_playList": {
+            "type": "class PlayListEntry*",
+            "id": 7,
+            "offset": 176,
+            "flags": 7,
+            "container": "Vector",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": true,
+            "hash": 3907873161
+        },
+        "m_priority": {
+            "type": "int",
+            "id": 8,
+            "offset": 208,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1235205852
+        },
+        "m_volume": {
+            "type": "float",
+            "id": 9,
+            "offset": 200,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1162855023
+        },
+        "m_loopCount": {
+            "type": "int",
+            "id": 10,
+            "offset": 204,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 865634717
+        },
+        "m_progression": {
+            "type": "enum PlayList::Progression",
+            "id": 11,
+            "offset": 220,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3279400238,
+            "enum_options": {
+                "Sequence": 0,
+                "Random": 1,
+                "SequenceOnceOnly": 2,
+                "RandomNoRepeat": 3
+            }
+        },
+        "m_progressMin": {
+            "type": "float",
+            "id": 12,
+            "offset": 212,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1497550192
+        },
+        "m_progressMax": {
+            "type": "float",
+            "id": 13,
+            "offset": 216,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1497549938
+        },
+        "m_audioFilterSet": {
+            "type": "unsigned int",
+            "id": 14,
+            "offset": 224,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 831339825
+        },
+        "m_animationNameFilter": {
+            "type": "std::string",
+            "id": 15,
+            "offset": 232,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2292854242
+        },
+        "m_functionallabel": {
+            "type": "std::string",
+            "id": 16,
+            "offset": 264,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3589331278
+        },
+        "m_innerRadius": {
+            "type": "float",
+            "id": 17,
+            "offset": 296,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 686816091
+        },
+        "m_inverted": {
+            "type": "bool",
+            "id": 18,
+            "offset": 300,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1034821044
+        }
+    }
+}

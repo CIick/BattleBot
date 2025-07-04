@@ -1,0 +1,38 @@
+Class Definition Extract: SpeedEffectInfo
+=========================================
+Extracted: 2025-07-04 18:11:19.608417
+Source: types.json
+Hash: 1946785963
+
+{
+    "name": "class SpeedEffectInfo",
+    "bases": [
+        "GameEffectInfo",
+        "PropertyClass"
+    ],
+    "hash": 1946785963,
+    "properties": {
+        "m_effectName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2029161513
+        },
+        "m_speedMultiplier": {
+            "type": "int",
+            "id": 1,
+            "offset": 104,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 32503058
+        }
+    }
+}

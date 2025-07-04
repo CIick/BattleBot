@@ -1,0 +1,48 @@
+Class Definition Extract: MorphingException
+===========================================
+Extracted: 2025-07-04 18:11:19.623218
+Source: types.json
+Hash: 935326015
+
+{
+    "name": "class MorphingException",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 935326015,
+    "properties": {
+        "m_secondPetTemplateID": {
+            "type": "gid",
+            "id": 0,
+            "offset": 72,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 89171206
+        },
+        "m_eggTemplateID": {
+            "type": "gid",
+            "id": 1,
+            "offset": 80,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1463276884
+        },
+        "m_probability": {
+            "type": "float",
+            "id": 2,
+            "offset": 88,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 396611384
+        }
+    }
+}

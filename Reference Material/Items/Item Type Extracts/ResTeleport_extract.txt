@@ -1,0 +1,15 @@
+Class Definition Extract: ResTeleport
+=====================================
+Extracted: 2025-07-04 18:11:19.934202
+Source: types.json
+Hash: 228794493
+
+{
+    "name": "class ResTeleport",
+    "bases": [
+        "Result",
+        "PropertyClass"
+    ],
+    "hash": 228794493,
+    "properties": {}
+}

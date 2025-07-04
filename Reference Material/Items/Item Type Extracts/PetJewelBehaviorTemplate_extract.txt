@@ -1,0 +1,49 @@
+Class Definition Extract: PetJewelBehaviorTemplate
+==================================================
+Extracted: 2025-07-04 18:11:19.677326
+Source: types.json
+Hash: 532055404
+
+{
+    "name": "class PetJewelBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 532055404,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_petTalentName": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1985615789
+        },
+        "m_minPetLevel": {
+            "type": "unsigned char",
+            "id": 2,
+            "offset": 136,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1317483893
+        }
+    }
+}

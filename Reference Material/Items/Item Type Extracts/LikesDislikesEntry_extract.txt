@@ -1,0 +1,62 @@
+Class Definition Extract: LikesDislikesEntry
+============================================
+Extracted: 2025-07-04 18:11:19.598645
+Source: types.json
+Hash: 1080628177
+
+{
+    "name": "class LikesDislikesEntry",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 1080628177,
+    "properties": {
+        "m_adjective": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3429518154
+        },
+        "m_stringTableKey": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 104,
+            "flags": 8388615,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2902469923
+        },
+        "m_modifier": {
+            "type": "float",
+            "id": 2,
+            "offset": 136,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 388952454,
+            "enum_options": {
+                "__DEFAULT": "1.0"
+            }
+        },
+        "m_hidden": {
+            "type": "bool",
+            "id": 3,
+            "offset": 140,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 519817759
+        }
+    }
+}

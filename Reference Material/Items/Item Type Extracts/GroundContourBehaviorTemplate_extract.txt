@@ -1,0 +1,38 @@
+Class Definition Extract: GroundContourBehaviorTemplate
+=======================================================
+Extracted: 2025-07-04 18:11:19.952952
+Source: types.json
+Hash: 1274565252
+
+{
+    "name": "class GroundContourBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1274565252,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_maxDeviation": {
+            "type": "float",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 595695008
+        }
+    }
+}

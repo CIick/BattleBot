@@ -1,0 +1,137 @@
+Class Definition Extract: PestBehaviorTemplate
+==============================================
+Extracted: 2025-07-04 18:11:19.824425
+Source: types.json
+Hash: 185378075
+
+{
+    "name": "class PestBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 185378075,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_pestRank": {
+            "type": "int",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2022116066
+        },
+        "m_wiltMinRate": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 128,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3102833515
+        },
+        "m_wiltMaxRate": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 160,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2801609581
+        },
+        "m_goodPest": {
+            "type": "bool",
+            "id": 4,
+            "offset": 192,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 564893944
+        },
+        "m_useSizeAnimations": {
+            "type": "bool",
+            "id": 5,
+            "offset": 193,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1095895662
+        },
+        "m_providesWater": {
+            "type": "bool",
+            "id": 6,
+            "offset": 194,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1403713858
+        },
+        "m_providesSun": {
+            "type": "bool",
+            "id": 7,
+            "offset": 195,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1942306581
+        },
+        "m_providesPollination": {
+            "type": "bool",
+            "id": 8,
+            "offset": 196,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 443775752
+        },
+        "m_providesMagic": {
+            "type": "bool",
+            "id": 9,
+            "offset": 197,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1391840608
+        },
+        "m_providesMusic": {
+            "type": "bool",
+            "id": 10,
+            "offset": 198,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1392572416
+        }
+    }
+}

@@ -1,0 +1,275 @@
+Class Definition Extract: LevelUpElixirBehaviorTemplate
+=======================================================
+Extracted: 2025-07-04 18:11:19.896943
+Source: types.json
+Hash: 2132434067
+
+{
+    "name": "class LevelUpElixirBehaviorTemplate",
+    "bases": [
+        "ElixirBehaviorTemplate",
+        "TimedItemBehaviorTemplate",
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 2132434067,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_expireTime": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 128,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3122602039
+        },
+        "m_timerType": {
+            "type": "enum TimerType",
+            "id": 2,
+            "offset": 120,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 571744132,
+            "enum_options": {
+                "TimerType_Game": 0,
+                "TimerType_Calendar": 1
+            }
+        },
+        "m_typeList": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 160,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2119049625
+        },
+        "m_equipParticle": {
+            "type": "std::string",
+            "id": 4,
+            "offset": 176,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2222557491
+        },
+        "m_unequipParticle": {
+            "type": "std::string",
+            "id": 5,
+            "offset": 208,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2215431638
+        },
+        "m_equipSound": {
+            "type": "std::string",
+            "id": 6,
+            "offset": 240,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2720016552
+        },
+        "m_unequipSound": {
+            "type": "std::string",
+            "id": 7,
+            "offset": 272,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1552545835
+        },
+        "m_equipActionList": {
+            "type": "class SharedPointer<class ResultList>",
+            "id": 8,
+            "offset": 304,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 1314016250
+        },
+        "m_unequipActionList": {
+            "type": "class SharedPointer<class ResultList>",
+            "id": 9,
+            "offset": 320,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 2143896925
+        },
+        "m_combatEnabled": {
+            "type": "bool",
+            "id": 10,
+            "offset": 336,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1399744148
+        },
+        "m_PvPEnabled": {
+            "type": "bool",
+            "id": 11,
+            "offset": 337,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1042852532
+        },
+        "m_setCharacterToLevel": {
+            "type": "int",
+            "id": 12,
+            "offset": 408,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1268456078
+        },
+        "m_resultingTrainingPoints": {
+            "type": "int",
+            "id": 13,
+            "offset": 412,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1710285808
+        },
+        "m_schoolSpecificData": {
+            "type": "class SharedPointer<class LevelUpElixirSchoolSpecificData>",
+            "id": 14,
+            "offset": 472,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": true,
+            "hash": 2609926725
+        },
+        "m_allSchoolData": {
+            "type": "class SharedPointer<class LevelUpElixirSchoolSpecificData>",
+            "id": 15,
+            "offset": 488,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 2860093528
+        },
+        "m_firstWarningStringKey": {
+            "type": "std::string",
+            "id": 16,
+            "offset": 344,
+            "flags": 8388615,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3095888729
+        },
+        "m_secondWarningStringKey": {
+            "type": "std::string",
+            "id": 17,
+            "offset": 376,
+            "flags": 8388615,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2111513997
+        },
+        "m_accessPasses": {
+            "type": "std::string",
+            "id": 18,
+            "offset": 456,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2956825884
+        },
+        "m_gold": {
+            "type": "int",
+            "id": 19,
+            "offset": 416,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 219423808
+        },
+        "m_tutorialEventsToTrigger": {
+            "type": "std::string",
+            "id": 20,
+            "offset": 424,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2795041819
+        },
+        "m_tipIDsToDismiss": {
+            "type": "gid",
+            "id": 21,
+            "offset": 440,
+            "flags": 33554439,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1424884996
+        },
+        "m_maxPotions": {
+            "type": "int",
+            "id": 22,
+            "offset": 504,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1639626892
+        }
+    }
+}

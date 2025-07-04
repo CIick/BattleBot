@@ -1,0 +1,27 @@
+Class Definition Extract: JewelVaultBehaviorTemplate
+====================================================
+Extracted: 2025-07-04 18:11:20.024864
+Source: types.json
+Hash: 1935313616
+
+{
+    "name": "class JewelVaultBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1935313616,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        }
+    }
+}

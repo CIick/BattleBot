@@ -1,0 +1,61 @@
+Class Definition Extract: ReqCanAddExpansion
+============================================
+Extracted: 2025-07-04 18:11:19.912804
+Source: types.json
+Hash: 1088237445
+
+{
+    "name": "class ReqCanAddExpansion",
+    "bases": [
+        "Requirement",
+        "PropertyClass"
+    ],
+    "hash": 1088237445,
+    "properties": {
+        "m_applyNOT": {
+            "type": "bool",
+            "id": 0,
+            "offset": 72,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1746328074,
+            "enum_options": {
+                "__DEFAULT": 0
+            }
+        },
+        "m_operator": {
+            "type": "enum Requirement::Operator",
+            "id": 1,
+            "offset": 76,
+            "flags": 2097183,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2672792317,
+            "enum_options": {
+                "ROP_AND": 0,
+                "ROP_OR": 1,
+                "__DEFAULT": "ROP_AND"
+            }
+        },
+        "m_category": {
+            "type": "enum ExpansionData::Category",
+            "id": 2,
+            "offset": 80,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2705349254,
+            "enum_options": {
+                "ExpansionData::EDC_Bank": 0,
+                "ExpansionData::EDC_FriendsList": 1
+            }
+        }
+    }
+}

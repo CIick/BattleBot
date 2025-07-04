@@ -1,0 +1,38 @@
+Class Definition Extract: DependentResourcesBehaviorTemplate
+============================================================
+Extracted: 2025-07-04 18:11:19.740004
+Source: types.json
+Hash: 1161512562
+
+{
+    "name": "class DependentResourcesBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1161512562,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_dependentResourceList": {
+            "type": "class DependentResourceContainer",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 893254530
+        }
+    }
+}

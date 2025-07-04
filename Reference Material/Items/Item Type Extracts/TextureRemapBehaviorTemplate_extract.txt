@@ -1,0 +1,27 @@
+Class Definition Extract: TextureRemapBehaviorTemplate
+======================================================
+Extracted: 2025-07-04 18:11:19.982313
+Source: types.json
+Hash: 1778176712
+
+{
+    "name": "class TextureRemapBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1778176712,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        }
+    }
+}

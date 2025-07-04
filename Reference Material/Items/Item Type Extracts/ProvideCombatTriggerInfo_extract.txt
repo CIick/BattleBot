@@ -1,0 +1,52 @@
+Class Definition Extract: ProvideCombatTriggerInfo
+==================================================
+Extracted: 2025-07-04 18:11:19.776295
+Source: types.json
+Hash: 702901064
+
+{
+    "name": "class ProvideCombatTriggerInfo",
+    "bases": [
+        "GameEffectInfo",
+        "PropertyClass"
+    ],
+    "hash": 702901064,
+    "properties": {
+        "m_effectName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2029161513
+        },
+        "m_triggerName": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 104,
+            "flags": 268435463,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3100183568,
+            "enum_options": {
+                "__BASECLASS": "CombatTriggerList"
+            }
+        },
+        "m_triggerDescription": {
+            "type": "class SharedPointer<class CombatTriggerDescription>",
+            "id": 2,
+            "offset": 136,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 2619655202
+        }
+    }
+}

@@ -1,0 +1,93 @@
+Class Definition Extract: CollisionBehaviorTemplate
+===================================================
+Extracted: 2025-07-04 18:11:19.564038
+Source: types.json
+Hash: 2052493990
+
+{
+    "name": "class CollisionBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 2052493990,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_walkableCollisionFilename": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2223282859
+        },
+        "m_solidCollisionFilename": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 152,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3292753187
+        },
+        "m_clickableCollisionFilename": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 184,
+            "flags": 131335,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1964485570
+        },
+        "m_bAutoClickBox": {
+            "type": "bool",
+            "id": 4,
+            "offset": 216,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 13289565
+        },
+        "m_bDisableCollision": {
+            "type": "bool",
+            "id": 5,
+            "offset": 217,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2086036629
+        },
+        "m_bClientOnly": {
+            "type": "bool",
+            "id": 6,
+            "offset": 218,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1918653686
+        }
+    }
+}

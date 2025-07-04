@@ -1,0 +1,82 @@
+Class Definition Extract: CastleBlocksBehaviorTemplate
+======================================================
+Extracted: 2025-07-04 18:11:19.698496
+Source: types.json
+Hash: 764236905
+
+{
+    "name": "class CastleBlocksBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 764236905,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_providesFloor": {
+            "type": "int",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1381462216
+        },
+        "m_placedOnFloorTemplateID": {
+            "type": "unsigned int",
+            "id": 2,
+            "offset": 124,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 349311070
+        },
+        "m_pickedupFromFloorTemplateID": {
+            "type": "unsigned int",
+            "id": 3,
+            "offset": 128,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1208761121
+        },
+        "m_hasFadeableCeiling": {
+            "type": "int",
+            "id": 4,
+            "offset": 132,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2119980373
+        },
+        "m_dontFadeCeiling": {
+            "type": "int",
+            "id": 5,
+            "offset": 136,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 373748538
+        }
+    }
+}

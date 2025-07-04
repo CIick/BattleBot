@@ -1,0 +1,50 @@
+Class Definition Extract: ResPrepaidTime
+========================================
+Extracted: 2025-07-04 18:11:19.885085
+Source: types.json
+Hash: 465628675
+
+{
+    "name": "class ResPrepaidTime",
+    "bases": [
+        "ResultSourceType",
+        "Result",
+        "PropertyClass"
+    ],
+    "hash": 465628675,
+    "properties": {
+        "m_sourceType": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 80,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2305508654
+        },
+        "m_zoneLevelMax": {
+            "type": "unsigned int",
+            "id": 1,
+            "offset": 76,
+            "flags": 263,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1028933895
+        },
+        "m_zoneLevelMin": {
+            "type": "unsigned int",
+            "id": 2,
+            "offset": 72,
+            "flags": 263,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1028934149
+        }
+    }
+}

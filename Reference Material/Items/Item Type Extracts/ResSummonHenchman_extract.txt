@@ -1,0 +1,27 @@
+Class Definition Extract: ResSummonHenchman
+===========================================
+Extracted: 2025-07-04 18:11:19.734325
+Source: types.json
+Hash: 2002643208
+
+{
+    "name": "class ResSummonHenchman",
+    "bases": [
+        "Result",
+        "PropertyClass"
+    ],
+    "hash": 2002643208,
+    "properties": {
+        "m_templateID": {
+            "type": "gid",
+            "id": 0,
+            "offset": 72,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1075328001
+        }
+    }
+}

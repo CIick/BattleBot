@@ -1,0 +1,37 @@
+Class Definition Extract: SigilZoneInfo
+=======================================
+Extracted: 2025-07-04 18:11:19.743981
+Source: types.json
+Hash: 497987934
+
+{
+    "name": "class SigilZoneInfo",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 497987934,
+    "properties": {
+        "m_zoneName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2171167736
+        },
+        "m_maximumLevel": {
+            "type": "int",
+            "id": 1,
+            "offset": 104,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 285381904
+        }
+    }
+}

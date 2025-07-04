@@ -1,0 +1,104 @@
+Class Definition Extract: TeleportProximityBehaviorTemplate
+===========================================================
+Extracted: 2025-07-04 18:11:19.764575
+Source: types.json
+Hash: 1330192380
+
+{
+    "name": "class TeleportProximityBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1330192380,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_radius": {
+            "type": "float",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 989410271
+        },
+        "m_offsetX": {
+            "type": "float",
+            "id": 2,
+            "offset": 124,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 315454742
+        },
+        "m_offsetY": {
+            "type": "float",
+            "id": 3,
+            "offset": 128,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 315454743
+        },
+        "m_offsetZ": {
+            "type": "float",
+            "id": 4,
+            "offset": 132,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 315454744
+        },
+        "m_locationName": {
+            "type": "std::string",
+            "id": 5,
+            "offset": 136,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1824218389
+        },
+        "m_housingExtraZone": {
+            "type": "std::string",
+            "id": 6,
+            "offset": 168,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2893855128
+        },
+        "m_requirementList": {
+            "type": "class RequirementList*",
+            "id": 7,
+            "offset": 200,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 3581372079
+        }
+    }
+}

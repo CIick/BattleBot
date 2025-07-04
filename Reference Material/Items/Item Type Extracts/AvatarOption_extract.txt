@@ -1,0 +1,60 @@
+Class Definition Extract: AvatarOption
+======================================
+Extracted: 2025-07-04 18:11:19.489899
+Source: types.json
+Hash: 1801776167
+
+{
+    "name": "class AvatarOption",
+    "bases": [
+        "AvatarOptionBase",
+        "PropertyClass"
+    ],
+    "hash": 1801776167,
+    "properties": {
+        "m_conditionFlags": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2483653903
+        },
+        "m_mesh": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 104,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1717328392
+        },
+        "m_noMesh": {
+            "type": "bool",
+            "id": 2,
+            "offset": 168,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 760920637
+        },
+        "m_geometry": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 136,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2041778855
+        }
+    }
+}

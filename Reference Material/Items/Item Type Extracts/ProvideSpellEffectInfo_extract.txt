@@ -1,0 +1,82 @@
+Class Definition Extract: ProvideSpellEffectInfo
+================================================
+Extracted: 2025-07-04 18:11:19.531855
+Source: types.json
+Hash: 4740335
+
+{
+    "name": "class ProvideSpellEffectInfo",
+    "bases": [
+        "GameEffectInfo",
+        "PropertyClass"
+    ],
+    "hash": 4740335,
+    "properties": {
+        "m_effectName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2029161513
+        },
+        "m_spellName": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 104,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2688485244
+        },
+        "m_numSpells": {
+            "type": "int",
+            "id": 2,
+            "offset": 136,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1269498237
+        },
+        "m_vFX": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 144,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1764750607
+        },
+        "m_vFXOverride": {
+            "type": "bool",
+            "id": 4,
+            "offset": 176,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1491092359
+        },
+        "m_sound": {
+            "type": "std::string",
+            "id": 5,
+            "offset": 184,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2307644996
+        }
+    }
+}

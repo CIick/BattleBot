@@ -1,0 +1,26 @@
+Class Definition Extract: DependentResourceContainer
+====================================================
+Extracted: 2025-07-04 18:11:19.681091
+Source: types.json
+Hash: 807565142
+
+{
+    "name": "class DependentResourceContainer",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 807565142,
+    "properties": {
+        "m_dependentResourceFilename": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2968493147
+        }
+    }
+}

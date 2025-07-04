@@ -1,0 +1,37 @@
+Class Definition Extract: PestEntry
+===================================
+Extracted: 2025-07-04 18:11:19.671695
+Source: types.json
+Hash: 1652967942
+
+{
+    "name": "class PestEntry",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 1652967942,
+    "properties": {
+        "m_percentPerHour": {
+            "type": "float",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1587432077
+        },
+        "m_pestTemplateID": {
+            "type": "unsigned int",
+            "id": 1,
+            "offset": 76,
+            "flags": 33554439,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1301457330
+        }
+    }
+}

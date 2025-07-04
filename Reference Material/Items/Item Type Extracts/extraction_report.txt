@@ -1,0 +1,135 @@
+Class Definition Extraction Report
+========================================
+
+Generated: 2025-07-04 18:11:20.052302
+Source: ..\types.json
+Output Directory: ..\..\Reference Material\Items\Item Type Extracts
+
+EXTRACTION SUMMARY
+--------------------
+Total Requested: 117
+Successfully Extracted: 117
+Failed Extractions: 0
+Success Rate: 100.0%
+
+DETAILED RESULTS
+--------------------
+
+SUCCESS (117):
+  - AnimationBehaviorTemplate
+  - AquariumBehaviorTemplate
+  - AvatarOption
+  - AvatarTextureOption
+  - BehaviorTemplate
+  - BreadCrumbBehaviorTemplate
+  - CastleBlocksBehaviorTemplate
+  - CastleMagicBehaviorTemplate
+  - CollisionBehaviorTemplate
+  - CombatTriggerDescription
+  - CrownShopButtonNameBehaviorTemplate
+  - CustomEmoteBehaviorTemplate
+  - DeckBehaviorTemplate
+  - DeedBehaviorTemplate
+  - DependentResourceContainer
+  - DependentResourcesBehaviorTemplate
+  - ElixirBehaviorTemplate
+  - ElixirBenefitBehaviorTemplate
+  - EquipmentBehaviorTemplate
+  - FXBySlotEffectInfo
+  - FXOverrideBehaviorInfo
+  - FXOverrideBehaviorTemplate
+  - FidgetBehaviorTemplate
+  - FidgetStateInfo
+  - FurnitureInfoBehaviorTemplate
+  - GameEffectInfo
+  - GardeningBehaviorTemplate
+  - GardeningShedBehaviorTemplate
+  - GearVaultBehaviorTemplate
+  - GroundContourBehaviorTemplate
+  - HatchmakingKioskBehaviorTemplate
+  - HousingMusicBehaviorTemplate
+  - HousingMusicPlayerBehaviorTemplate
+  - HousingPetBehaviorTemplate
+  - HousingSigilBehaviorTemplate
+  - HousingSignBehaviorTemplate
+  - HousingTeleporterBehaviorTemplate
+  - HousingTextureBehaviorTemplate
+  - ItemDynamicBehaviorTemplate
+  - JewelSocket
+  - JewelSocketBehaviorTemplate
+  - JewelVaultBehaviorTemplate
+  - LeashBehaviorTemplate
+  - LeashOffsetOverride
+  - LevelUpElixirBehaviorTemplate
+  - LevelUpElixirPropertyRegistryEntry
+  - LevelUpElixirSchoolSpecificData
+  - LikesDislikesEntry
+  - MorphingException
+  - MountDyeToTexture
+  - MountItemBehaviorTemplate
+  - NotInActiveTournamentOrPvP
+  - ObjectStateBehaviorTemplate
+  - PestBehaviorTemplate
+  - PestEntry
+  - PetDyeToTexture
+  - PetGameBehaviorTemplate
+  - PetItemBehaviorTemplate
+  - PetJewelBehaviorTemplate
+  - PetLevelInfo
+  - PetStat
+  - PlayListEntry
+  - PositionalSoundBehaviorTemplate
+  - PositionalStateSoundBehaviorTemplate
+  - ProvideCombatTriggerInfo
+  - ProvideSpellEffectInfo
+  - RaidKeyBehaviorTemplate
+  - RenderBehaviorTemplate
+  - RentalBehaviorTemplate
+  - ReqAddHousingItemSlots
+  - ReqAddIncreaseInventory
+  - ReqArenaSeasonTitle
+  - ReqCanAddExpansion
+  - ReqCanSummonHenchman
+  - ReqClearCraftingSlots
+  - ReqClearHatchingSlot
+  - ReqEnergy
+  - ReqHasBadge
+  - ReqHasEntry
+  - ReqHasSecondarySchool
+  - ReqHatchAllEggs
+  - ReqHealthPercent
+  - ReqHighestCharacterLevelOnAccount
+  - ReqInCombat
+  - ReqIsGender
+  - ReqIsLevelLocked
+  - ReqMagicLevel
+  - ReqManaPercent
+  - ReqSchoolOfFocus
+  - RequirementList
+  - ResAddCharacterSlotResult
+  - ResAddReagent
+  - ResPrepaidTime
+  - ResSummonHenchman
+  - ResTeleport
+  - ResultList
+  - RidableBehaviorTemplate
+  - RitualObjectBehaviorTemplate
+  - ScriptBehaviorTemplate
+  - SeedBehaviorTemplate
+  - SigilZoneInfo
+  - SpeedEffectInfo
+  - StartingPipEffectInfo
+  - StatisticEffectInfo
+  - TeleportProximityBehaviorTemplate
+  - TextureRemapBehaviorTemplate
+  - TrainBehaviorTemplate
+  - TransformationEffectInfo
+  - TreasureCardPosterBehaviorTemplate
+  - TreasureCardVaultBehaviorTemplate
+  - UserAnimationEvent
+  - VisualAttributeBehaviorTemplate
+  - WhirlyBurlyBehaviorTemplate
+  - WizAvatarItemInfo
+  - WizItemTemplate
+  - WizardCharacterBehaviorTemplate
+  - WorldElixirBehaviorTemplate

@@ -1,0 +1,59 @@
+Class Definition Extract: PlayListEntry
+=======================================
+Extracted: 2025-07-04 18:11:19.683930
+Source: types.json
+Hash: 2134218563
+
+{
+    "name": "class PlayListEntry",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 2134218563,
+    "properties": {
+        "m_trackFilename": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2957416369
+        },
+        "m_bIsStreamed": {
+            "type": "bool",
+            "id": 1,
+            "offset": 104,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2001937222
+        },
+        "m_animPos": {
+            "type": "float",
+            "id": 2,
+            "offset": 108,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1878658286
+        },
+        "m_animObjName": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 112,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2369937660
+        }
+    }
+}

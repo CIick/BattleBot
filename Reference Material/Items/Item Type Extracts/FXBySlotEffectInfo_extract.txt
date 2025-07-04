@@ -1,0 +1,38 @@
+Class Definition Extract: FXBySlotEffectInfo
+============================================
+Extracted: 2025-07-04 18:11:19.835109
+Source: types.json
+Hash: 1431480669
+
+{
+    "name": "class FXBySlotEffectInfo",
+    "bases": [
+        "GameEffectInfo",
+        "PropertyClass"
+    ],
+    "hash": 1431480669,
+    "properties": {
+        "m_effectName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2029161513
+        },
+        "m_bIsOnPet": {
+            "type": "bool",
+            "id": 1,
+            "offset": 104,
+            "flags": 263,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 522593303
+        }
+    }
+}

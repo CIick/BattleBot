@@ -1,0 +1,37 @@
+Class Definition Extract: MountDyeToTexture
+===========================================
+Extracted: 2025-07-04 18:11:19.568797
+Source: types.json
+Hash: 1362719164
+
+{
+    "name": "class MountDyeToTexture",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 1362719164,
+    "properties": {
+        "m_dye": {
+            "type": "int",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 267033084
+        },
+        "m_texture": {
+            "type": "int",
+            "id": 1,
+            "offset": 76,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 222406987
+        }
+    }
+}

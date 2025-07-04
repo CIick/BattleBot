@@ -1,0 +1,59 @@
+Class Definition Extract: FidgetStateInfo
+=========================================
+Extracted: 2025-07-04 18:11:20.033419
+Source: types.json
+Hash: 1553752133
+
+{
+    "name": "class FidgetStateInfo",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 1553752133,
+    "properties": {
+        "m_idleName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2107593594
+        },
+        "m_fidgetName": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 104,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2693632335
+        },
+        "m_fidgetsPerMinute": {
+            "type": "float",
+            "id": 2,
+            "offset": 136,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1517617078
+        },
+        "m_fidgetSound": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 144,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2312384855
+        }
+    }
+}

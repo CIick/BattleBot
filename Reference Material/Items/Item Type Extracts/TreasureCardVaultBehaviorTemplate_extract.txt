@@ -1,0 +1,27 @@
+Class Definition Extract: TreasureCardVaultBehaviorTemplate
+===========================================================
+Extracted: 2025-07-04 18:11:20.006238
+Source: types.json
+Hash: 1109689497
+
+{
+    "name": "class TreasureCardVaultBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1109689497,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        }
+    }
+}

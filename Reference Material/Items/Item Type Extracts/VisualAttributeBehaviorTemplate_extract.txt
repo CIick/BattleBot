@@ -1,0 +1,101 @@
+Class Definition Extract: VisualAttributeBehaviorTemplate
+=========================================================
+Extracted: 2025-07-04 18:11:19.644246
+Source: types.json
+Hash: 270201387
+
+{
+    "name": "class VisualAttributeBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 270201387,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_visualAttributeType": {
+            "type": "enum VisualAttributeType",
+            "id": 1,
+            "offset": 120,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2701225082,
+            "enum_options": {
+                "VAT_HairStyle": 0,
+                "VAT_HairColor": 1,
+                "VAT_FaceStyle": 2,
+                "VAT_SkinColor": 3,
+                "VAT_EyeColor": 4,
+                "VAT_FacePaint": 5,
+                "VAT_NewEyeColor": 6,
+                "VAT_NewFaceStyle": 7,
+                "VAT_NoseStyle": 8,
+                "VAT_MouthStyle": 9,
+                "VAT_AccessoryStyle": 10,
+                "VAT_EyebrowStyle": 11,
+                "VAT_LipColorStyle": 12,
+                "VAT_BoyColor": 13,
+                "VAT_BoyTrimColor": 14,
+                "VAT_GirlColor": 15,
+                "VAT_GirlTrimColor": 16
+            }
+        },
+        "m_sourceFile": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 128,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2304987980
+        },
+        "m_referenceFile": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 160,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1866483306
+        },
+        "m_color": {
+            "type": "class Color",
+            "id": 4,
+            "offset": 192,
+            "flags": 262151,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1791663549
+        },
+        "m_equipmentIcon": {
+            "type": "std::string",
+            "id": 5,
+            "offset": 200,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1920035708
+        }
+    }
+}

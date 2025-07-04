@@ -1,0 +1,123 @@
+Class Definition Extract: TransformationEffectInfo
+==================================================
+Extracted: 2025-07-04 18:11:19.760850
+Source: types.json
+Hash: 596139110
+
+{
+    "name": "class TransformationEffectInfo",
+    "bases": [
+        "GameEffectInfo",
+        "PropertyClass"
+    ],
+    "hash": 596139110,
+    "properties": {
+        "m_effectName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2029161513
+        },
+        "m_sRace": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 104,
+            "flags": 268435463,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2306580681,
+            "enum_options": {
+                "__BASECLASS": "CharacterRaceTable"
+            }
+        },
+        "m_eGender": {
+            "type": "enum eGender",
+            "id": 2,
+            "offset": 136,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2776344943,
+            "enum_options": {
+                "Male": 1,
+                "Female": 0,
+                "Neutral": 2
+            }
+        },
+        "m_fScale": {
+            "type": "float",
+            "id": 3,
+            "offset": 140,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 503137701
+        },
+        "m_nPrimaryColor": {
+            "type": "int",
+            "id": 4,
+            "offset": 144,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 310334923
+        },
+        "m_nSecondaryColor": {
+            "type": "int",
+            "id": 5,
+            "offset": 148,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 516938671
+        },
+        "m_nPatternOption": {
+            "type": "int",
+            "id": 6,
+            "offset": 152,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 413195679
+        },
+        "m_nGeometryOption": {
+            "type": "int",
+            "id": 7,
+            "offset": 156,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 676541869
+        },
+        "m_sNaturalAttack": {
+            "type": "std::string",
+            "id": 8,
+            "offset": 160,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2131867453
+        }
+    }
+}

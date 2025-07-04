@@ -1,0 +1,49 @@
+Class Definition Extract: JewelSocketBehaviorTemplate
+=====================================================
+Extracted: 2025-07-04 18:11:19.535566
+Source: types.json
+Hash: 486640963
+
+{
+    "name": "class JewelSocketBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 486640963,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_jewelSockets": {
+            "type": "class JewelSocket",
+            "id": 1,
+            "offset": 120,
+            "flags": 31,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2355333159
+        },
+        "m_socketDeleted": {
+            "type": "bool",
+            "id": 2,
+            "offset": 136,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 685830803
+        }
+    }
+}

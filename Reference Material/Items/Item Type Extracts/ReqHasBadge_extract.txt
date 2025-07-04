@@ -1,0 +1,60 @@
+Class Definition Extract: ReqHasBadge
+=====================================
+Extracted: 2025-07-04 18:11:19.728319
+Source: types.json
+Hash: 1914767513
+
+{
+    "name": "class ReqHasBadge",
+    "bases": [
+        "Requirement",
+        "PropertyClass"
+    ],
+    "hash": 1914767513,
+    "properties": {
+        "m_applyNOT": {
+            "type": "bool",
+            "id": 0,
+            "offset": 72,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1746328074,
+            "enum_options": {
+                "__DEFAULT": 0
+            }
+        },
+        "m_operator": {
+            "type": "enum Requirement::Operator",
+            "id": 1,
+            "offset": 76,
+            "flags": 2097183,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2672792317,
+            "enum_options": {
+                "ROP_AND": 0,
+                "ROP_OR": 1,
+                "__DEFAULT": "ROP_AND"
+            }
+        },
+        "m_badgeName": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 80,
+            "flags": 268435487,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3002948047,
+            "enum_options": {
+                "__BASECLASS": "BadgeTemplate"
+            }
+        }
+    }
+}

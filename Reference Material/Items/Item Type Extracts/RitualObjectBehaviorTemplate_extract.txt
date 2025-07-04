@@ -1,0 +1,181 @@
+Class Definition Extract: RitualObjectBehaviorTemplate
+======================================================
+Extracted: 2025-07-04 18:11:19.881787
+Source: types.json
+Hash: 1177468303
+
+{
+    "name": "class RitualObjectBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1177468303,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_nifStateList": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2130407509
+        },
+        "m_requirementList": {
+            "type": "class RequirementList*",
+            "id": 2,
+            "offset": 136,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 3581372079
+        },
+        "m_activatedResultList": {
+            "type": "class ResultList*",
+            "id": 3,
+            "offset": 144,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 3738420568
+        },
+        "m_questEvent": {
+            "type": "std::string",
+            "id": 4,
+            "offset": 152,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1788127695
+        },
+        "m_singleUse": {
+            "type": "bool",
+            "id": 5,
+            "offset": 184,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2055323234
+        },
+        "m_removalTime": {
+            "type": "float",
+            "id": 6,
+            "offset": 224,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1385020188
+        },
+        "m_lootTable": {
+            "type": "std::string",
+            "id": 7,
+            "offset": 192,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2539512673
+        },
+        "m_useStates": {
+            "type": "bool",
+            "id": 8,
+            "offset": 228,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 992523892
+        },
+        "m_stateList": {
+            "type": "std::string",
+            "id": 9,
+            "offset": 232,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2944863128
+        },
+        "m_unlockFirst": {
+            "type": "bool",
+            "id": 10,
+            "offset": 248,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1802051527
+        },
+        "m_removedState": {
+            "type": "std::string",
+            "id": 11,
+            "offset": 256,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1831242670
+        },
+        "m_allowedSchoolsList": {
+            "type": "std::string",
+            "id": 12,
+            "offset": 288,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2565048282
+        },
+        "m_wrongSchoolResultList": {
+            "type": "class ResultList*",
+            "id": 13,
+            "offset": 320,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 3155773624
+        },
+        "m_requiredCantrip": {
+            "type": "std::string",
+            "id": 14,
+            "offset": 328,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2879892077
+        }
+    }
+}

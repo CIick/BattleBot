@@ -1,0 +1,60 @@
+Class Definition Extract: AquariumBehaviorTemplate
+==================================================
+Extracted: 2025-07-04 18:11:19.803051
+Source: types.json
+Hash: 1357374669
+
+{
+    "name": "class AquariumBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1357374669,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_fishtankSize": {
+            "type": "int",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1397459629
+        },
+        "m_fishtankType": {
+            "type": "int",
+            "id": 2,
+            "offset": 124,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1397512660
+        },
+        "m_numberOfFish": {
+            "type": "int",
+            "id": 3,
+            "offset": 128,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1143336898
+        }
+    }
+}

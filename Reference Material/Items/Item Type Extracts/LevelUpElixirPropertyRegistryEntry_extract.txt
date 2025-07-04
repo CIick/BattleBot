@@ -1,0 +1,59 @@
+Class Definition Extract: LevelUpElixirPropertyRegistryEntry
+============================================================
+Extracted: 2025-07-04 18:11:19.874708
+Source: types.json
+Hash: 702487858
+
+{
+    "name": "class LevelUpElixirPropertyRegistryEntry",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 702487858,
+    "properties": {
+        "m_registryEntryName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1765562503
+        },
+        "m_value": {
+            "type": "int",
+            "id": 1,
+            "offset": 104,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 812990455
+        },
+        "m_questRegistry": {
+            "type": "bool",
+            "id": 2,
+            "offset": 108,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1043261502
+        },
+        "m_questName": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 112,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1702112846
+        }
+    }
+}

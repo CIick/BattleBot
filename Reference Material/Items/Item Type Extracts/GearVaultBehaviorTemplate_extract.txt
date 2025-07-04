@@ -1,0 +1,27 @@
+Class Definition Extract: GearVaultBehaviorTemplate
+===================================================
+Extracted: 2025-07-04 18:11:19.989020
+Source: types.json
+Hash: 1297524364
+
+{
+    "name": "class GearVaultBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1297524364,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        }
+    }
+}

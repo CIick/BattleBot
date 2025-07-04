@@ -1,0 +1,112 @@
+Class Definition Extract: PetLevelInfo
+======================================
+Extracted: 2025-07-04 18:11:19.556341
+Source: types.json
+Hash: 1991057723
+
+{
+    "name": "class PetLevelInfo",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 1991057723,
+    "properties": {
+        "m_level": {
+            "type": "unsigned char",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1438884808
+        },
+        "m_template": {
+            "type": "unsigned int",
+            "id": 1,
+            "offset": 76,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 669977097
+        },
+        "m_requiredXP": {
+            "type": "unsigned int",
+            "id": 2,
+            "offset": 80,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1890811574
+        },
+        "m_powerCardCount": {
+            "type": "unsigned int",
+            "id": 3,
+            "offset": 84,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1299301661
+        },
+        "m_powerCardName": {
+            "type": "std::string",
+            "id": 4,
+            "offset": 88,
+            "flags": 268435463,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1856508131,
+            "enum_options": {
+                "__BASECLASS": "SpellTemplate"
+            }
+        },
+        "m_powerCardName2": {
+            "type": "std::string",
+            "id": 5,
+            "offset": 120,
+            "flags": 268435463,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2598131765,
+            "enum_options": {
+                "__BASECLASS": "SpellTemplate"
+            }
+        },
+        "m_powerCardName3": {
+            "type": "std::string",
+            "id": 6,
+            "offset": 152,
+            "flags": 268435463,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2598131766,
+            "enum_options": {
+                "__BASECLASS": "SpellTemplate"
+            }
+        },
+        "m_lootTable": {
+            "type": "std::string",
+            "id": 7,
+            "offset": 184,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2539512673
+        }
+    }
+}

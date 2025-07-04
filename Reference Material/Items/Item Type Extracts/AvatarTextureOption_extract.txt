@@ -1,0 +1,104 @@
+Class Definition Extract: AvatarTextureOption
+=============================================
+Extracted: 2025-07-04 18:11:19.501259
+Source: types.json
+Hash: 9759260
+
+{
+    "name": "class AvatarTextureOption",
+    "bases": [
+        "AvatarOptionBase",
+        "PropertyClass"
+    ],
+    "hash": 9759260,
+    "properties": {
+        "m_conditionFlags": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2483653903
+        },
+        "m_materialName": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 104,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1878140043
+        },
+        "m_textures": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 136,
+            "flags": 131079,
+            "container": "Vector",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2391848735
+        },
+        "m_decals": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 160,
+            "flags": 131079,
+            "container": "Vector",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1853711975
+        },
+        "m_decals2": {
+            "type": "std::string",
+            "id": 4,
+            "offset": 184,
+            "flags": 131079,
+            "container": "Vector",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2505858617
+        },
+        "m_tintColors": {
+            "type": "class Vector3D",
+            "id": 5,
+            "offset": 208,
+            "flags": 7,
+            "container": "Vector",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3059416083
+        },
+        "m_tintColorNames": {
+            "type": "std::string",
+            "id": 6,
+            "offset": 232,
+            "flags": 7,
+            "container": "Vector",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1803799469
+        },
+        "m_useTintColor": {
+            "type": "bool",
+            "id": 7,
+            "offset": 256,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1646372318
+        }
+    }
+}

@@ -1,0 +1,48 @@
+Class Definition Extract: PetStat
+=================================
+Extracted: 2025-07-04 18:11:19.538482
+Source: types.json
+Hash: 1691270114
+
+{
+    "name": "class PetStat",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 1691270114,
+    "properties": {
+        "m_name": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1717359772
+        },
+        "m_statID": {
+            "type": "unsigned int",
+            "id": 1,
+            "offset": 104,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1172182134
+        },
+        "m_value": {
+            "type": "int",
+            "id": 2,
+            "offset": 108,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 812990455
+        }
+    }
+}

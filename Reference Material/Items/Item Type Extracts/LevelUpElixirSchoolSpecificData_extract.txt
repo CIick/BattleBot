@@ -1,0 +1,136 @@
+Class Definition Extract: LevelUpElixirSchoolSpecificData
+=========================================================
+Extracted: 2025-07-04 18:11:19.754157
+Source: types.json
+Hash: 1399036544
+
+{
+    "name": "class LevelUpElixirSchoolSpecificData",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 1399036544,
+    "properties": {
+        "m_schoolID": {
+            "type": "unsigned int",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 369010242
+        },
+        "m_spellsToGive": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 80,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3002626524
+        },
+        "m_questsToComplete": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 96,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3386208316
+        },
+        "m_questsToAdd": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 112,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2101794028
+        },
+        "m_itemsToPlaceInInventory": {
+            "type": "unsigned int",
+            "id": 4,
+            "offset": 128,
+            "flags": 33554439,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 792703868
+        },
+        "m_gearToEquip": {
+            "type": "unsigned int",
+            "id": 5,
+            "offset": 144,
+            "flags": 33554439,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1383467923
+        },
+        "m_teleportToZoneOnComplete": {
+            "type": "std::string",
+            "id": 6,
+            "offset": 176,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2109587583
+        },
+        "m_badgesToComplete": {
+            "type": "std::string",
+            "id": 7,
+            "offset": 160,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2133622941
+        },
+        "m_schoolName": {
+            "type": "std::string",
+            "id": 8,
+            "offset": 208,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3385349572
+        },
+        "m_propertyRegistryEntires": {
+            "type": "class LevelUpElixirPropertyRegistryEntry",
+            "id": 9,
+            "offset": 240,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2009387835
+        },
+        "m_addTrainingPointIfQuestNotComplete": {
+            "type": "std::string",
+            "id": 10,
+            "offset": 256,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3422771029
+        }
+    }
+}

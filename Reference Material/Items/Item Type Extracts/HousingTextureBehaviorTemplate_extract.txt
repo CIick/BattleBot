@@ -1,0 +1,53 @@
+Class Definition Extract: HousingTextureBehaviorTemplate
+========================================================
+Extracted: 2025-07-04 18:11:19.669216
+Source: types.json
+Hash: 1982878661
+
+{
+    "name": "class HousingTextureBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1982878661,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_textureType": {
+            "type": "enum HousingTextureType",
+            "id": 1,
+            "offset": 120,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1680179944,
+            "enum_options": {
+                "HTT_FLOOR": 0,
+                "HTT_WALL": 1
+            }
+        },
+        "m_textureFilename": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 128,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2208648365
+        }
+    }
+}

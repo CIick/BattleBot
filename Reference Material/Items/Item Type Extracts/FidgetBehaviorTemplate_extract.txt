@@ -1,0 +1,38 @@
+Class Definition Extract: FidgetBehaviorTemplate
+================================================
+Extracted: 2025-07-04 18:11:20.043825
+Source: types.json
+Hash: 706487366
+
+{
+    "name": "class FidgetBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 706487366,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_fidgetStateInfo": {
+            "type": "class FidgetStateInfo",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Vector",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1986859062
+        }
+    }
+}

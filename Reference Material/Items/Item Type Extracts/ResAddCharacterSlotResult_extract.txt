@@ -1,0 +1,27 @@
+Class Definition Extract: ResAddCharacterSlotResult
+===================================================
+Extracted: 2025-07-04 18:11:19.900797
+Source: types.json
+Hash: 1306093476
+
+{
+    "name": "class ResAddCharacterSlotResult",
+    "bases": [
+        "Result",
+        "PropertyClass"
+    ],
+    "hash": 1306093476,
+    "properties": {
+        "m_maximumPurchasedCharacterSlots": {
+            "type": "int",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 57745273
+        }
+    }
+}

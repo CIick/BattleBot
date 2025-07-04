@@ -1,0 +1,49 @@
+Class Definition Extract: StartingPipEffectInfo
+===============================================
+Extracted: 2025-07-04 18:11:19.546009
+Source: types.json
+Hash: 1821554269
+
+{
+    "name": "class StartingPipEffectInfo",
+    "bases": [
+        "GameEffectInfo",
+        "PropertyClass"
+    ],
+    "hash": 1821554269,
+    "properties": {
+        "m_effectName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2029161513
+        },
+        "m_pipsGiven": {
+            "type": "int",
+            "id": 1,
+            "offset": 104,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1346249167
+        },
+        "m_powerPipsGiven": {
+            "type": "int",
+            "id": 2,
+            "offset": 108,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 377908508
+        }
+    }
+}

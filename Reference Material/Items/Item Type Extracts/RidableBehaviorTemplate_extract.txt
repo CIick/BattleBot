@@ -1,0 +1,130 @@
+Class Definition Extract: RidableBehaviorTemplate
+=================================================
+Extracted: 2025-07-04 18:11:19.809452
+Source: types.json
+Hash: 1897468788
+
+{
+    "name": "class RidableBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1897468788,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_icon": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1717182340
+        },
+        "m_title": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 152,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2308614141
+        },
+        "m_promptText": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 184,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1874125698
+        },
+        "m_numberOfSlots": {
+            "type": "int",
+            "id": 4,
+            "offset": 216,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1235585933
+        },
+        "m_rideType": {
+            "type": "int",
+            "id": 5,
+            "offset": 220,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1625839040
+        },
+        "m_riderKFM": {
+            "type": "std::string",
+            "id": 6,
+            "offset": 224,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3124565263
+        },
+        "m_rideDuration": {
+            "type": "float",
+            "id": 7,
+            "offset": 240,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1239878913
+        },
+        "m_zOffset": {
+            "type": "float",
+            "id": 8,
+            "offset": 244,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 736134072
+        },
+        "m_newRideType": {
+            "type": "enum NewRideTypes",
+            "id": 9,
+            "offset": 248,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2665245566,
+            "enum_options": {
+                "NRT_UseRideType": 0,
+                "NRT_Chimney": 12
+            }
+        }
+    }
+}

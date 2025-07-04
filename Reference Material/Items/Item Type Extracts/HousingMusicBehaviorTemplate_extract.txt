@@ -1,0 +1,49 @@
+Class Definition Extract: HousingMusicBehaviorTemplate
+======================================================
+Extracted: 2025-07-04 18:11:19.672825
+Source: types.json
+Hash: 1172622241
+
+{
+    "name": "class HousingMusicBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1172622241,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_staticMusicFile": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2845362532
+        },
+        "m_dynamicMusicFile": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 152,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3205780097
+        }
+    }
+}

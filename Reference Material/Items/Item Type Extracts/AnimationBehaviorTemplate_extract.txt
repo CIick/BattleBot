@@ -1,0 +1,265 @@
+Class Definition Extract: AnimationBehaviorTemplate
+===================================================
+Extracted: 2025-07-04 18:11:19.628002
+Source: types.json
+Hash: 101271634
+
+{
+    "name": "class AnimationBehaviorTemplate",
+    "bases": [
+        "RenderBehaviorTemplate",
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 101271634,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_assetName": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1513131580
+        },
+        "m_proxyName": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 152,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3120358366
+        },
+        "m_height": {
+            "type": "float",
+            "id": 3,
+            "offset": 184,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 602977104
+        },
+        "m_bStaticObject": {
+            "type": "bool",
+            "id": 4,
+            "offset": 188,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 108091444
+        },
+        "m_bCastsShadow": {
+            "type": "bool",
+            "id": 5,
+            "offset": 189,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 652868121
+        },
+        "m_bFadesIn": {
+            "type": "bool",
+            "id": 6,
+            "offset": 190,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 263337711,
+            "enum_options": {
+                "__DEFAULT": 1
+            }
+        },
+        "m_opacity": {
+            "type": "float",
+            "id": 7,
+            "offset": 192,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 700308464,
+            "enum_options": {
+                "__DEFAULT": 1
+            }
+        },
+        "m_bFadesOut": {
+            "type": "bool",
+            "id": 8,
+            "offset": 196,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 17988464,
+            "enum_options": {
+                "__DEFAULT": 1
+            }
+        },
+        "m_bPortalExcluded": {
+            "type": "bool",
+            "id": 9,
+            "offset": 197,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 239086293
+        },
+        "m_scale": {
+            "type": "float",
+            "id": 10,
+            "offset": 200,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 899693439,
+            "enum_options": {
+                "__DEFAULT": 1
+            }
+        },
+        "m_bCanBeHiddenByCamera": {
+            "type": "bool",
+            "id": 11,
+            "offset": 204,
+            "flags": 263,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 185252414
+        },
+        "m_nLightType": {
+            "type": "enum RenderBehaviorTemplate::LightingType",
+            "id": 12,
+            "offset": 208,
+            "flags": 2097159,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2027385184,
+            "enum_options": {
+                "None": 0,
+                "Char": 1,
+                "Env": 2
+            }
+        },
+        "m_shadowAssetName": {
+            "type": "std::string",
+            "id": 13,
+            "offset": 216,
+            "flags": 131335,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1844059970
+        },
+        "m_enableReqs": {
+            "type": "class SharedPointer<class RequirementList>",
+            "id": 14,
+            "offset": 248,
+            "flags": 263,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 3158020443
+        },
+        "m_skeletonID": {
+            "type": "int",
+            "id": 15,
+            "offset": 264,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1375865996
+        },
+        "m_dataLookupAssetName": {
+            "type": "std::string",
+            "id": 16,
+            "offset": 272,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1944770480
+        },
+        "m_animationAssetName": {
+            "type": "std::string",
+            "id": 17,
+            "offset": 304,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2944957756
+        },
+        "m_movementScale": {
+            "type": "float",
+            "id": 18,
+            "offset": 336,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 768663914
+        },
+        "m_idleAnimationName": {
+            "type": "std::string",
+            "id": 19,
+            "offset": 344,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1616739386
+        },
+        "m_animationEventList": {
+            "type": "class SharedPointer<class UserAnimationEvent>",
+            "id": 20,
+            "offset": 376,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": true,
+            "hash": 2858101335
+        }
+    }
+}

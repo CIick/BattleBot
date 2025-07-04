@@ -1,0 +1,129 @@
+Class Definition Extract: DeckBehaviorTemplate
+==============================================
+Extracted: 2025-07-04 18:11:19.562334
+Source: types.json
+Hash: 185554206
+
+{
+    "name": "class DeckBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 185554206,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_defaultDeck": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 268435463,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2375433463,
+            "enum_options": {
+                "__BASECLASS": "DeckTemplate"
+            }
+        },
+        "m_primarySchoolName": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 152,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3211370408
+        },
+        "m_genericMaxRank": {
+            "type": "int",
+            "id": 3,
+            "offset": 188,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1490181353
+        },
+        "m_schoolMaxRank": {
+            "type": "int",
+            "id": 4,
+            "offset": 192,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1600140084
+        },
+        "m_genericMaxInstances": {
+            "type": "int",
+            "id": 5,
+            "offset": 196,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1724791269
+        },
+        "m_schoolMaxInstances": {
+            "type": "int",
+            "id": 6,
+            "offset": 200,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1818539792
+        },
+        "m_maxSpells": {
+            "type": "int",
+            "id": 7,
+            "offset": 204,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 818580275
+        },
+        "m_maxTreasureCards": {
+            "type": "int",
+            "id": 8,
+            "offset": 208,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 383300312
+        },
+        "m_maxArchmasteryPoints": {
+            "type": "float",
+            "id": 9,
+            "offset": 212,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 430012637
+        }
+    }
+}

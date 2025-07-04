@@ -1,0 +1,38 @@
+Class Definition Extract: HousingTeleporterBehaviorTemplate
+===========================================================
+Extracted: 2025-07-04 18:11:19.841409
+Source: types.json
+Hash: 2035824397
+
+{
+    "name": "class HousingTeleporterBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 2035824397,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_isPetTeleporter": {
+            "type": "bool",
+            "id": 1,
+            "offset": 120,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 137008766
+        }
+    }
+}

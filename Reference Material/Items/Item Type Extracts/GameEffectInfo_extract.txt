@@ -1,0 +1,26 @@
+Class Definition Extract: GameEffectInfo
+========================================
+Extracted: 2025-07-04 18:11:19.785695
+Source: types.json
+Hash: 393204394
+
+{
+    "name": "class GameEffectInfo",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 393204394,
+    "properties": {
+        "m_effectName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 31,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2029161513
+        }
+    }
+}

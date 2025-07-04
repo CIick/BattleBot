@@ -1,0 +1,94 @@
+Class Definition Extract: WizAvatarItemInfo
+===========================================
+Extracted: 2025-07-04 18:11:19.520758
+Source: types.json
+Hash: 404939124
+
+{
+    "name": "class WizAvatarItemInfo",
+    "bases": [
+        "AvatarItemInfo",
+        "AvatarItemInfoBase",
+        "PropertyClass"
+    ],
+    "hash": 404939124,
+    "properties": {
+        "m_partName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2609631923
+        },
+        "m_slotName": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 104,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2819781566
+        },
+        "m_flags": {
+            "type": "std::string",
+            "id": 2,
+            "offset": 144,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2292098216
+        },
+        "m_options": {
+            "type": "class SharedPointer<class AvatarOption>",
+            "id": 3,
+            "offset": 160,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": true,
+            "hash": 2499357824
+        },
+        "m_textureOptions": {
+            "type": "class SharedPointer<class AvatarTextureOption>",
+            "id": 4,
+            "offset": 176,
+            "flags": 7,
+            "container": "List",
+            "dynamic": true,
+            "singleton": false,
+            "pointer": true,
+            "hash": 2667548348
+        },
+        "m_defaultOption": {
+            "type": "class SharedPointer<class AvatarOption>",
+            "id": 5,
+            "offset": 192,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 2436336754
+        },
+        "m_defaultTextureOption": {
+            "type": "class SharedPointer<class AvatarTextureOption>",
+            "id": 6,
+            "offset": 208,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": true,
+            "hash": 2712636654
+        }
+    }
+}

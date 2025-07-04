@@ -1,0 +1,37 @@
+Class Definition Extract: PetDyeToTexture
+=========================================
+Extracted: 2025-07-04 18:11:19.572797
+Source: types.json
+Hash: 941783554
+
+{
+    "name": "class PetDyeToTexture",
+    "bases": [
+        "PropertyClass"
+    ],
+    "hash": 941783554,
+    "properties": {
+        "m_dye": {
+            "type": "int",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 267033084
+        },
+        "m_texture": {
+            "type": "int",
+            "id": 1,
+            "offset": 76,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 222406987
+        }
+    }
+}

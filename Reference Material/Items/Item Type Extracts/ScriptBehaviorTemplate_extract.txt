@@ -1,0 +1,63 @@
+Class Definition Extract: ScriptBehaviorTemplate
+================================================
+Extracted: 2025-07-04 18:11:19.866365
+Source: types.json
+Hash: 1783230993
+
+{
+    "name": "class ScriptBehaviorTemplate",
+    "bases": [
+        "BehaviorTemplate",
+        "PropertyClass"
+    ],
+    "hash": 1783230993,
+    "properties": {
+        "m_behaviorName": {
+            "type": "std::string",
+            "id": 0,
+            "offset": 72,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 3130754092
+        },
+        "m_scriptFilename": {
+            "type": "std::string",
+            "id": 1,
+            "offset": 120,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 1831462225
+        },
+        "m_bDisableAutoRestart": {
+            "type": "bool",
+            "id": 2,
+            "offset": 152,
+            "flags": 7,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 815844583,
+            "enum_options": {
+                "__DEFAULT": 0
+            }
+        },
+        "m_clientScriptFilename": {
+            "type": "std::string",
+            "id": 3,
+            "offset": 160,
+            "flags": 131079,
+            "container": "Static",
+            "dynamic": false,
+            "singleton": false,
+            "pointer": false,
+            "hash": 2499494128
+        }
+    }
+}
