@@ -154,10 +154,25 @@ When adding support for new object types (Items, NPCs, Housing, etc.):
 5. **Output to Reports**: Save validation reports to `Reports/{ObjectType} Reports/`
 6. **Standard imports**: Always include katsuba SerializerOptions configuration
 
+### Report Organization
+
+**Reports Directory**: `DatabaseDemon/Reports/`
+
+**Object-Specific Reports**: Each object type gets its own subfolder
+- `DatabaseDemon/Reports/Spell Reports/` - Spell analysis and validation
+- `DatabaseDemon/Reports/Mob Reports/` - Mob analysis and validation  
+- `DatabaseDemon/Reports/Item Reports/` - Item analysis and validation
+- `DatabaseDemon/Reports/TemplateManifest Reports/` - Template manifest analysis
+
+**Report Types**: discovery, validation, statistics, failure analysis
+
+**Naming Convention**: Descriptive names with object type prefix
+
 ### Type Hash Reference
 
 Common Wizard101 object type hashes:
 - **701229577**: WizGameObjectTemplate (Mobs)
+- **991922385**: WizItemTemplate (Items)
 - **Spells**: Multiple types, see Spells/dtos/SpellsDTOFactory.py for complete mapping
 
 ### Centralized Conversion Utilities
